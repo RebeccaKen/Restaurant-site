@@ -30,3 +30,20 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 - A contact form to contact the diner staff
 
 
+## Wireframes
+
+### Computer screen 
+
+![](assets/images/wireframes/landing-page.jpg)
+![](assets/images/wireframes/reservation-page.jpg)
+![](assets/images/wireframes/menu-page.jpg)
+![](assets/images/wireframes/food-items-page.jpg)
+![](assets/images/wireframes/contact-page.jpg)
+
+### Mobile screen 
+
+![](assets/images/wireframes/mobile-landing-page.jpg)
+![](assets/images/wireframes/mobile-reservation-page.jpg)
+![](assets/images/wireframes/mobile-menu-page.jpg)
+![](assets/images/wireframes/mobile-order-page.jpg)
+![](assets/images/wireframes/mobile-contact-page.jpg)
