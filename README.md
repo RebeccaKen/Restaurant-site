@@ -29,6 +29,28 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 - A system that allows customers to manage their booking
 - A contact form to contact the diner staff
 
+### User Stories 
+
+1. As a superuser, I can create, remove, update or delete menu items from the database so that I can ensure the menu items are accurate and that the menu is fully up-to-date.
+2. As a superuser I can log in so that I can and access the backend of the website.
+3. As a user I can send a contact form to the restaurant so that I can receive additional information.
+4. As a user I can find a navigation bar and footer so that I can see what content there is on the website.
+5. As a user I can easily navigate through the website so that I can find the content I need.
+6. As a user I want to see icons for the restaurant's social media pages so that I can follow the diner on different platforms.
+7. As a user, I can see important information about the diner on the website's home page so that I don’t have to search the website for that information.
+8. As a user, I can see a clear visual indication of my login status so that I can choose to be logged in or out.
+9. As a user, I want to be prompted to register for an account so that I can have my information saved and manage my reservations.
+10. As a user, I want to be able to log in so that I can autopopulate forms with the information saved in my account.
+11. As a user, I can log in and I can edit/delete an existing reservation request so that I can make changes online if my plans change.
+12. As a user I can log in and access my customer information so that I can keep my details on the restaurant's website up to date.
+13. As a user, I want to be able to select the number of people in my party when booking so that I know there will be an available room at the table for all my party’s members.
+14. As a user, I want to be able to make a reservation request for a table for a specific date/time so that I will know if I have a table when I arrive.
+15. As a user, I want to receive an email confirming my reservation so that I know my reservation is confirmed.
+16. As a user, I can browse the restaurants' menu so I can decide what to order
+    
+    
+
+   
 
 ## Wireframes
 
