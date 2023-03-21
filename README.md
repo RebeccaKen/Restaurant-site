@@ -46,7 +46,7 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 13. As a user, I want to be able to select the number of people in my party when booking so that I know there will be an available room at the table for all my party’s members.
 14. As a user, I want to be able to make a reservation request for a table for a specific date/time so that I will know if I have a table when I arrive.
 15. As a user, I want to receive an email confirming my reservation so that I know my reservation is confirmed.
-16. As a user, I can browse the restaurants' menu so I can decide what to order
+16. As a user, I can browse the restaurants' menu so I can decide what to order.
     
     
 
