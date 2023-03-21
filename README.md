@@ -48,9 +48,6 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 15. As a user, I want to receive an email confirming my reservation so that I know my reservation is confirmed.
 16. As a user, I can browse the restaurants' menu so I can decide what to order.
     
-    
-
-   
 
 ## Wireframes
 
