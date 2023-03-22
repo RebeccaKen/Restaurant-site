@@ -1,1 +1,1 @@
-web: gunicorn codestar.wsgi
+web: gunicorn restaurant-site.wsgi
