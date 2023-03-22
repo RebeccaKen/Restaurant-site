@@ -6,8 +6,9 @@
 
 This is a full stack project created with Django, Python, Bootstrap, JavaScript, Html and CSS. This website was constructed to act as a website for the fictional Diner style restaurant ‘Mr D’z Route 66 Diner’. This website allows guests to make reservations & view the menu online.  
 
+## User Experience (UX)
 
-## Planning
+### Planning
 
 The development of ideas for this website grew with UX principles in mind. I began to think about strategy and the demographic that would make up the patrons visiting the website. I planned the implantation of features that would best suit the demographic. 
 
