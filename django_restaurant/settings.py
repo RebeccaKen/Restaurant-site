@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from pathlib import Path
 import os
+import dj_database_url
 
 if os.path.isfile("env.py"):
     import env 
@@ -73,10 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_restaurant.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,8 +82,9 @@ WSGI_APPLICATION = 'django_restaurant.wsgi.application'
 # }
 
 
+
 DATABASES = {
-     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
