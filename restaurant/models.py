@@ -19,8 +19,8 @@ class Menu(models.Model):
 class MenuItem(models.Model):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    description = models.TextField(blank=True)
-    allergens = models.TextField(blank=True)
+    description = models.TextField(blank=True, max_length=500)
+    allergens = models.TextField(blank=True, max_length=500)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     menu = models.ForeignKey(Menu, related_name='items', on_delete=models.CASCADE)
     updated_on = models.DateTimeField(auto_now=True)
@@ -31,6 +31,8 @@ class MenuItem(models.Model):
 
     def get_absolute_url(self):
         return reverse('menu_detail', args=[str(self.menu.id)])
+
+    
 
 
 
