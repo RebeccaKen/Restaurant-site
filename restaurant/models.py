@@ -43,11 +43,10 @@ class MenuItem(models.Model):
 
 
 class Reservation(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     date = models.DateTimeField()
-    time = models.TimeField()
     number_of_guests = models.IntegerField()
     notes = models.CharField(max_length=200, blank=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -62,7 +61,7 @@ class Reservation(models.Model):
 
 
 class Order(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, null=False, default='Default Name')
     order_date = models.DateTimeField(auto_now=True)
     order_total = models.DecimalField(max_digits=8, decimal_places=2)
     reservation = models.ForeignKey(Reservation, on_delete=models.SET_NULL, null=True, blank=True)
@@ -82,7 +81,7 @@ class Order(models.Model):
 
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, default='Default Name')
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)
     address = models.CharField(max_length=200, blank=True)
