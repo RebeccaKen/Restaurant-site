@@ -85,7 +85,7 @@ class Customer(models.Model):
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)
     address = models.CharField(max_length=200, blank=True)
-
+    slug = models.SlugField(default='', editable=False, max_length=100)
 
     def __str__(self):
         return self.name
