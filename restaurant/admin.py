@@ -20,12 +20,22 @@ class MenuItemAdmin(admin.ModelAdmin):
     search_fields = ('name', 'allegen', 'description')
 
 
+
+def approve_reservations(modeladmin, request, queryset):
+    queryset.update(is_approved=True)
+    approve_reservations.short_description = "Reservation Approved"
+
+
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'number_of_guests', 'date', 'phone', 'email')
     list_filter = ('name', 'date')
     search_fields = ('name', 'phone', 'email')
+    actions = [approve_reservations]
+    
+    
+
 
 
 @admin.register(Order)
