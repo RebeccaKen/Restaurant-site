@@ -43,7 +43,7 @@ class MenuItem(models.Model):
 
 
 class Reservation(models.Model):
-    name = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     date = models.DateTimeField()
