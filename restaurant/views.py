@@ -5,6 +5,8 @@ from django.utils import timezone
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .forms import ContactForm
+from .models import Contact
 
 
 
@@ -47,4 +49,4 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
 
-
+class ContactPageView():
