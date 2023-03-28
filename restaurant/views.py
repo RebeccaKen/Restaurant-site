@@ -66,4 +66,14 @@ class ContactPageView(View):
         if form.is_valid():
             contact = Contact(name=form.cleaned_data['name'], email=form.cleaned_data['email'], message=form.cleaned_data['message'])
             contact.save()
+    
+            subject = 'Contact form submission'
+            message = f"Name: {form.cleaned_data['name']}\nEmail: {form.cleaned_data['email']}\n\nMessage:\n{form.cleaned_data['message']}"
+            from_email = settings.DEFAULT_FROM_EMAIL
+            recipient_list = [settings.CONTACT_EMAIL]
+            send_mail(subject, message, from_email, recipient_list)
 
+            return redirect('contact_success')
+        else:
+            context = {'form': form}
+            return render(request, self.template_name, context)
