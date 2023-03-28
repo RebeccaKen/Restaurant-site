@@ -31,6 +31,7 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+
 class ReservationUpdateView(LoginRequiredMixin, UpdateView):
     model = Reservation
     template_name = 'reservation_form.html'
@@ -39,6 +40,7 @@ class ReservationUpdateView(LoginRequiredMixin, UpdateView):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
+
 
 class ReservationDeleteView(LoginRequiredMixin, DeleteView):
     model = Reservation
@@ -49,4 +51,19 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
 
-class ContactPageView():
+
+class ContactPageView(View):
+    model = Contact
+    template_name = contact.html
+
+    def get(self, request, *args, **kwargs):
+        form = ContactForm()
+        context = {'form': form}
+        return render(request, self.template_name, context)
+    
+    def post(self, request, *args, **kwargs):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            contact = Contact(name=form.cleaned_data['name'], email=form.cleaned_data['email'], message=form.cleaned_data['message'])
+            contact.save()
+

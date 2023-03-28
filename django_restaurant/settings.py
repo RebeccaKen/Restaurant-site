@@ -32,6 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['restaurant-site-app.herokuapp.com', 'localhost']
 
+# Email address where contact submissions should be sent
+CONTACT_EMAIL = 'kennedyrebecca694@gmail.com'
 
 # Application definition
 
