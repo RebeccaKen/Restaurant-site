@@ -78,7 +78,7 @@ class Order(models.Model):
         return sum(item.price for item in self.items.all())
 
 
-# models for Customer information
+# model for customer information
 
 
 class Customer(models.Model):
@@ -90,4 +90,17 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# class for contact information 
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.email}) - {self.submitted_at}"
+
 
