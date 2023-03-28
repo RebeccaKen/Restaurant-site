@@ -7,7 +7,6 @@ from django.utils import timezone
 
 # model for Menu
 
-
 class Menu(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True)

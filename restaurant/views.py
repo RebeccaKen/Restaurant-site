@@ -34,7 +34,7 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
 
 class ReservationUpdateView(LoginRequiredMixin, UpdateView):
     model = Reservation
-    template_name = 'reservation_form.html'
+    template_name = 'reservation_update_form.html'
     fields = ['name', 'email', 'phone', 'date', 'number_of_guests', 'notes']
 
     def get_queryset(self):
@@ -54,7 +54,7 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
 
 class ContactPageView(View):
     model = Contact
-    template_name = contact.html
+    template_name = 'contact.html'
 
     def get(self, request, *args, **kwargs):
         form = ContactForm()
@@ -72,7 +72,7 @@ class ContactPageView(View):
             recipient_list = [settings.CONTACT_EMAIL]
             send_mail(subject, message, from_email, recipient_list)
 
-            return redirect('contact_success')
+            return redirect('contact_success.html')
         else:
             context = {'form': form}
             return render(request, self.template_name, context)

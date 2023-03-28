@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import HomePageView, MenuListView, TemplateView, ReservationUpdateView, ReservationDeleteView
-from .views import ReservationCreateView
+from .views import ReservationCreateView, ContactPageView
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
@@ -8,6 +8,5 @@ urlpatterns = [
     path('reservation/create', ReservationCreateView.as_view(), name='reservation'),
     path('reservation/<int:pk>/update/', ReservationUpdateView.as_view(), name='reservation_update'),
     path('reservation/<int:pk>/delete/', ReservationDeleteView.as_view(), name='reservation_delete'),
-    path('contact/', ContactView.as_view(), name='contact'),
-    path('contact/success/', contact_success_view, name='contact_success')
+    path('contact/', ContactPageView.as_view(), name='contact'),
 ]
