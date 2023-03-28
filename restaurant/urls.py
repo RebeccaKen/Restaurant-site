@@ -7,5 +7,7 @@ urlpatterns = [
     path('menu/', MenuListView.as_view(), name='menu'),
     path('reservation/create', ReservationCreateView.as_view(), name='reservation'),
     path('reservation/<int:pk>/update/', ReservationUpdateView.as_view(), name='reservation_update'),
-    path('reservation/<int:pk>/delete/', ReservationDeleteView.as_view(), name='reservation_delete')
+    path('reservation/<int:pk>/delete/', ReservationDeleteView.as_view(), name='reservation_delete'),
+    path('contact/', ContactView.as_view(), name='contact'),
+    path('contact/success/', contact_success_view, name='contact_success')
 ]

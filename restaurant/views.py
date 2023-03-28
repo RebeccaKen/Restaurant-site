@@ -60,13 +60,12 @@ class ContactPageView(View):
         form = ContactForm()
         context = {'form': form}
         return render(request, self.template_name, context)
-    
+
     def post(self, request, *args, **kwargs):
         form = ContactForm(request.POST)
         if form.is_valid():
             contact = Contact(name=form.cleaned_data['name'], email=form.cleaned_data['email'], message=form.cleaned_data['message'])
             contact.save()
-    
             subject = 'Contact form submission'
             message = f"Name: {form.cleaned_data['name']}\nEmail: {form.cleaned_data['email']}\n\nMessage:\n{form.cleaned_data['message']}"
             from_email = settings.DEFAULT_FROM_EMAIL
