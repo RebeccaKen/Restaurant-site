@@ -38,7 +38,7 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'reservation' %}">Reservations</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_form' %}">Reservations</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'menu' %}">Menus</a>
@@ -46,13 +46,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
                     </li>
+                    <li class="nav-item"> <a class="nav-link" href="{% url 'account_signup' %}">Register</a> </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="#">Logout</a>
                     </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">

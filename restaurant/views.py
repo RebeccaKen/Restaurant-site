@@ -18,7 +18,7 @@ class HomePageView(TemplateView):
 
 class MenuListView(ListView):
     model = Menu
-    template_name = 'menu_list.html'
+    template_name = 'menu.html'
     context_object_name = 'menus'
 
 
