@@ -32,8 +32,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['restaurant-site-app.herokuapp.com', 'localhost']
 
-# Email address where contact submissions should be sent
-CONTACT_EMAIL = 'kennedyrebecca694@gmail.com'
 
 # Email account verification set to none
 ACCOUNT_EMAIL_VERIFICATION = 'none'
@@ -48,13 +46,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',
     'allauth',
-    'allauth.account', 
+    'allauth.account',
     'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
     'restaurant',
+    'bootstrap4'
 ]
 
 SITE_ID = 1

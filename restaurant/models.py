@@ -4,9 +4,8 @@ from cloudinary.models import CloudinaryField
 from django.utils import timezone
 
 
-
-
 # model for Menu
+
 
 class Menu(models.Model):
     name = models.CharField(max_length=200)
@@ -40,16 +39,15 @@ class MenuItem(models.Model):
 
 
 class Reservation(models.Model):
-    name = models.CharField(max_length=200)
-    email = models.EmailField()
-    phone = models.CharField(max_length=20)
+    name = models.CharField(max_length=200, null=False, blank=False)
+    email = models.EmailField(null=False)
+    phone = models.CharField(max_length=20, null=False)
     date = models.DateTimeField()
     number_of_guests = models.IntegerField()
     notes = models.CharField(max_length=200, blank=True)
     slug = models.SlugField(max_length=200, unique=True)
     created_at = models.DateTimeField(auto_now=True)
     is_approved = models.BooleanField(default=False)
-
 
     def __str__(self):
         return f"Reservation for {self.party_size} people on {self.date} at {self.time}"

@@ -55,15 +55,13 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
 class FeedbackListView(ListView):
     model = Feedback
     template_name = 'feedback.html'
+    context_object_name = 'feedback'
+    paginate_by = 4
 
-    def feedback(request):
-        if request.method == 'POST':
-            form = FeedbackForm(request.POST)
-            if form.is_valid():
-                form.save()
-            return redirect('contact_success')
-        else:
-            form = FeedbackForm()
-            context = {'form': form}
-            return render(request, 'feedback.html', context)
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(approved=True)
+        return queryset
+
+
 
