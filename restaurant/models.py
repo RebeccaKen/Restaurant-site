@@ -42,7 +42,7 @@ class Reservation(models.Model):
     name = models.CharField(max_length=200, null=False, blank=False)
     email = models.EmailField(null=False)
     phone = models.CharField(max_length=20, null=False)
-    date = models.DateTimeField()
+    date = models.DateTimeField(default='2022-01-01 12:00:00')
     number_of_guests = models.IntegerField()
     notes = models.CharField(max_length=200, blank=True)
     slug = models.SlugField(max_length=200, unique=True)

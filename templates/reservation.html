@@ -9,7 +9,11 @@
     <title>reservation template</title>
 </head>
 <body>
-    This is the reservation template
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>      
 </body>
 </html>
 {% endblock content %}

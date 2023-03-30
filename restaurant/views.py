@@ -24,7 +24,7 @@ class MenuListView(ListView):
 
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
-    template_name = 'reservation_form.html'
+    template_name = 'reservation.html'
     fields = ['name', 'email', 'phone', 'date', 'number_of_guests', 'notes',]
 
     def form_valid(self, form):
@@ -32,9 +32,9 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class ReservationUpdateView(LoginRequiredMixin, UpdateView):
+class ReservationEditView(LoginRequiredMixin, UpdateView):
     model = Reservation
-    template_name = 'reservation_update_form.html'
+    template_name = 'reservation_edit.html'
     fields = ['name', 'email', 'phone', 'date', 'number_of_guests', 'notes']
 
     def get_queryset(self):
@@ -44,7 +44,7 @@ class ReservationUpdateView(LoginRequiredMixin, UpdateView):
 
 class ReservationDeleteView(LoginRequiredMixin, DeleteView):
     model = Reservation
-    template_name = 'reservation_confirm_delete.html'
+    template_name = 'reservation_delete.html'
     success_url = reverse_lazy('reservation_list')
 
     def get_queryset(self):
