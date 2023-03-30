@@ -5,6 +5,7 @@ from django.utils import timezone
 
 
 
+
 # model for Menu
 
 class Menu(models.Model):
@@ -34,9 +35,6 @@ class MenuItem(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse('menu_detail', args=[str(self.menu.id)])
-
 
 # model for reservations
 
@@ -57,24 +55,27 @@ class Reservation(models.Model):
         return f"Reservation for {self.party_size} people on {self.date} at {self.time}"
 
 
-# model for orders
+# model for feedback
 
 
-class Order(models.Model):
-    name = models.CharField(max_length=100, null=False, default='Default Name')
-    order_date = models.DateTimeField(auto_now=True)
-    order_total = models.DecimalField(max_digits=8, decimal_places=2)
-    reservation = models.ForeignKey(Reservation, on_delete=models.SET_NULL, null=True, blank=True)
-    items = models.ManyToManyField(MenuItem)
-
-    def __str__(self):
-        return f"Order #{self.id} for {self.customer.name}"
+class Feedback(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    comments = models.TextField()
+    date = models.DateTimeField(auto_now=True)
+    rating = models.IntegerField(choices=((1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5')))
+    approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['-order_date']
+        verbose_name_plural = 'Feedback'
 
-    def total_cost(self):
-        return sum(item.price for item in self.items.all())
+    def __str__(self):
+        return f"{self.name}'s Feedback"
+
+    def get_rating_display(self):
+        return f"{self.rating}/5"
+
+    get_rating_display.short_description = 'Rating'
 
 
 # model for customer information
@@ -90,16 +91,5 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
-
-# class for contact information 
-
-class Contact(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    message = models.TextField()
-    submitted_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.name} ({self.email}) - {self.submitted_at}"
 
 

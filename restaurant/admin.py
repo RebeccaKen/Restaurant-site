@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu, MenuItem, Reservation, Order, Customer
+from .models import Menu, MenuItem, Reservation, Feedback, Customer
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -36,14 +36,18 @@ class ReservationAdmin(admin.ModelAdmin):
     
     
 
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
 
+    list_display = ('name', 'email', 'date', 'rating', 'approved')
+    list_filter = ('approved', 'date', 'rating')
+    search_fields = ('name', 'email', 'comments')
+    actions = ['approve_feedback']
 
-@admin.register(Order)
-class OrderAdmin(admin.ModelAdmin):
+    def approve_feedback(self, request, queryset):
+        queryset.update(approved=True)
 
-    list_display = ('name', 'reservation', 'order_date')
-    list_filter = ('name', 'order_date')
-    search_fields = ('name', 'phone', 'email')
+    approve_feedback.short_description = 'Approve selected feedback'
 
 
 @admin.register(Customer)

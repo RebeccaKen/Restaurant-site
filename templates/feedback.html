@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+{% block content %}
+<div class="container">
+    <h1>Leave Feedback</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_name">Name</label>
+        <input type="text" name="name" id="id_name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="id_email">Email</label>
+        <input type="email" name="email" id="id_email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="id_rating">Rating</label>
+        <select name="rating" id="id_rating" class="form-control" required>
+          <option value="">Choose a rating</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="id_comments">Comments</label>
+        <textarea name="comments" id="id_comments" class="form-control" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Feedback</button>
+    </form>
+  </div>
+{% for feedback in feedback %}
+{% if feedback.approved %}
+    <div>
+        <h2>{{ feedback.name }}'s Feedback</h2>
+        <p><strong>Rating:</strong> {{ feedback.get_rating_display }}</p>
+        <p><strong>Date:</strong> {{ feedback.date }}</p>
+        <p>{{ feedback.comments }}</p>
+    </div>
+{% endif %}
+{% endfor %}
+        {% endblock content %}
+    

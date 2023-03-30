@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View, ListView, DetailView, TemplateView
-from .models import Menu, MenuItem, Reservation, Order, Customer
+from .models import Menu, MenuItem, Reservation, Customer
 from django.utils import timezone
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .forms import ContactForm
-from .models import Contact
+from .models import Feedback
+from .forms import FeedbackForm
 
 
 
@@ -52,27 +52,18 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
         return queryset.filter(user=self.request.user)
 
 
-class ContactPageView(View):
-    model = Contact
-    template_name = 'contact.html'
+class FeedbackListView(ListView):
+    model = Feedback
+    template_name = 'feedback.html'
 
-    def get(self, request, *args, **kwargs):
-        form = ContactForm()
-        context = {'form': form}
-        return render(request, self.template_name, context)
-
-    def post(self, request, *args, **kwargs):
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            contact = Contact(name=form.cleaned_data['name'], email=form.cleaned_data['email'], message=form.cleaned_data['message'])
-            contact.save()
-            subject = 'Contact form submission'
-            message = f"Name: {form.cleaned_data['name']}\nEmail: {form.cleaned_data['email']}\n\nMessage:\n{form.cleaned_data['message']}"
-            from_email = settings.DEFAULT_FROM_EMAIL
-            recipient_list = [settings.CONTACT_EMAIL]
-            send_mail(subject, message, from_email, recipient_list)
-
-            return redirect('contact_success.html')
+    def feedback(request):
+        if request.method == 'POST':
+            form = FeedbackForm(request.POST)
+            if form.is_valid():
+                form.save()
+            return redirect('contact_success')
         else:
+            form = FeedbackForm()
             context = {'form': form}
-            return render(request, self.template_name, context)
+            return render(request, 'feedback.html', context)
+
