@@ -27,7 +27,7 @@ class MenuListView(ListView):
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
     template_name = 'reservation.html'
-    fields = ['name', 'email', 'phone', 'date', 'notes',]
+    fields = ['name', 'email', 'phone', 'number_of_guests', 'date', 'notes',]
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -61,7 +61,8 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
 class FeedbackListView(ListView):
     model = Feedback
     template_name = 'feedback.html'
-    paginate_by = 4
+    fields = ['name', 'email', 'comments', 'rating']
+    paginate_by = 5
     submitted = False
 
     def post(self, request, *args, **kwargs):

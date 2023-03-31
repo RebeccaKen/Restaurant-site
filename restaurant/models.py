@@ -42,6 +42,7 @@ class MenuItem(models.Model):
 
 class Reservation(models.Model):
     name = models.CharField(max_length=200, null=False, blank=False)
+    number_of_guests = models.IntegerField(blank=False, default=1)
     email = models.EmailField(null=False)
     phone = models.CharField(max_length=20, null=False)
     date = models.DateTimeField(default='2022-01-01 12:00:00')
