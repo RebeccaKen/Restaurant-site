@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils import timezone
 from autoslug import AutoSlugField
+from django.forms import ModelForm
 
 
 # model for Menu
@@ -74,6 +75,10 @@ class Feedback(models.Model):
         return f"{self.rating}/5"
 
     get_rating_display.short_description = 'Rating'
+
+    def save(self, *args, **kwargs):
+        self.approved = False
+        super().save(*args, **kwargs)
 
 
 # model for customer information

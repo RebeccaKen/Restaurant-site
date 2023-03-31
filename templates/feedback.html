@@ -8,8 +8,18 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Feedback</h1>
-  {{ feedback }}
+  {% block content %}
+  <h1>Feedback Form</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+
+  {% if submitted %}
+    <p>Thank you for your feedback!</p>
+  {% endif %}
+{% endblock %}
 </body>
 </html>
     

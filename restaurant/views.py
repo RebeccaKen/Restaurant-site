@@ -7,6 +7,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Feedback
 from django.contrib import messages
+from .forms import FeedbackForm
+from django.forms import ModelForm
 
 
 
@@ -60,11 +62,22 @@ class FeedbackListView(ListView):
     model = Feedback
     template_name = 'feedback.html'
     paginate_by = 4
+    submitted = False
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        queryset = queryset.filter(approved=True)
-        return queryset
+    def post(self, request, *args, **kwargs):
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            feedback = form.save(commit=False)
+            feedback.approved = False
+            feedback.save()
+            self.submitted = True
+        else:
+            self.submitted = False
+        return self.get(request, *args, **kwargs)
 
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = FeedbackForm()
+        context['submitted'] = getattr(self, 'submitted', False)
+        return context
 
