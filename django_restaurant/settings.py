@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'restaurant',
-    'bootstrap4'
+    'bootstrap4',
+    'autoslug'
 ]
 
 SITE_ID = 1

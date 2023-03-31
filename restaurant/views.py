@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Feedback
-from .forms import FeedbackForm
+from django.contrib import messages
 
 
 
@@ -25,17 +25,21 @@ class MenuListView(ListView):
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
     template_name = 'reservation.html'
-    fields = ['name', 'email', 'phone', 'date', 'number_of_guests', 'notes',]
+    fields = ['name', 'email', 'phone', 'date', 'notes',]
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+    def get_success_url(self):
+        messages.success(self.request, 'Thank you for your reservation!')
+        return reverse_lazy('home')
+
 
 class ReservationEditView(LoginRequiredMixin, UpdateView):
     model = Reservation
     template_name = 'reservation_edit.html'
-    fields = ['name', 'email', 'phone', 'date', 'number_of_guests', 'notes']
+    fields = ['name', 'email', 'phone', 'date', 'notes']
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -55,7 +59,6 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
 class FeedbackListView(ListView):
     model = Feedback
     template_name = 'feedback.html'
-    context_object_name = 'feedback'
     paginate_by = 4
 
     def get_queryset(self):
