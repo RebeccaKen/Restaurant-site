@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import View, ListView, DetailView, TemplateView
 from .models import Menu, MenuItem, Reservation, Customer
 from django.utils import timezone
@@ -7,9 +7,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Feedback
 from django.contrib import messages
-from .forms import FeedbackForm, CustomerForm
+from .forms import FeedbackForm 
 from django.forms import ModelForm
-
+from allauth.account.forms import UserForm
+from .forms import AccountSettingsForm
 
 
 #Views for restaurant website
@@ -82,4 +83,19 @@ class FeedbackListView(ListView):
         context['submitted'] = getattr(self, 'submitted', False)
         return context
 
+
+class AccountSettingsView(ListView):
+    model = Customer
+    template_name = 'account_settings.html'
+    fields = ['name', 'phone', 'email', 'address']
+
+    def account_settings(request):
+        if request.method == 'POST':
+            form = UserForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('account_settings')
+        else:
+            form = UserForm(instance=request.user)
+            return render(request, 'account_settings.html', {'form': form})
 

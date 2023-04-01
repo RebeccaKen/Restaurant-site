@@ -86,7 +86,7 @@ class Feedback(models.Model):
 
 
 class Customer(models.Model):
-    name = models.CharField(max_length=100, default='Default Name')
+    name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)
     address = models.CharField(max_length=200, blank=True)

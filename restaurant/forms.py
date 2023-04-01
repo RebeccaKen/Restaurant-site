@@ -2,12 +2,6 @@ from django import forms
 from django.forms import ModelForm
 from .models import Feedback, Customer
 
-# class FeedbackForm(forms.ModelForm):
-#     model = Feedback
-#     name = forms.CharField(max_length=100)
-#     email = forms.EmailField()
-#     comments = forms.CharField(widget=forms.Textarea)
-#     rating = forms.IntegerField(label='Rating (1-5)', min_value=1, max_value=5)
 
 class FeedbackForm(forms.ModelForm):
     class Meta:
@@ -17,7 +11,16 @@ class FeedbackForm(forms.ModelForm):
             'comments': forms.Textarea(attrs={'rows': 5}),
         }
 
-class CustomerForm(forms.ModelForm):
+class AccountSettingsForm(forms.ModelForm):
     class Meta:
-        model = Customer
-        fields = ['name', 'email', 'phone', 'address']
+        model = Customer 
+        fields = ['name', 'phone', 'email', 'address']
+
+    def __init__(self, *args, **kwargs):
+        self.instance = kwargs.get('instance')
+        super().__init__(*args, **kwargs)
+        if self.instance:
+            self.fields['name'].initial = self.instance.name
+            self.fields['phone'].initial = self.instance.phone
+            self.fields['email'].initial = self.instance.email
+            self.fields['address'].initial = self.instance.address
