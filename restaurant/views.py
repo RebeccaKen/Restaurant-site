@@ -7,7 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Feedback
 from django.contrib import messages
-from .forms import FeedbackForm
+from .forms import FeedbackForm, CustomerForm
 from django.forms import ModelForm
 
 
@@ -81,4 +81,5 @@ class FeedbackListView(ListView):
         context['form'] = FeedbackForm()
         context['submitted'] = getattr(self, 'submitted', False)
         return context
+
 

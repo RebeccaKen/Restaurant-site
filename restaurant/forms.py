@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Feedback
+from .models import Feedback, Customer
 
 # class FeedbackForm(forms.ModelForm):
 #     model = Feedback
@@ -16,3 +16,8 @@ class FeedbackForm(forms.ModelForm):
         widgets = {
             'comments': forms.Textarea(attrs={'rows': 5}),
         }
+
+class CustomerForm(forms.ModelForm):
+    class Meta:
+        model = Customer
+        fields = ['name', 'email', 'phone', 'address']
