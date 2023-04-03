@@ -10,7 +10,6 @@ from django.contrib import messages
 from .forms import FeedbackForm 
 from django.forms import ModelForm
 from allauth.account.forms import UserForm
-from .forms import AccountSettingsForm, EditAccountForm
 from django.views.generic.edit import FormView
 
 #Views for restaurant website
@@ -82,59 +81,4 @@ class FeedbackListView(ListView):
         context['form'] = FeedbackForm()
         context['submitted'] = getattr(self, 'submitted', False)
         return context
-
-
-class AccountSettingsView(LoginRequiredMixin, FormView):
-    template_name = 'accounts/account_settings.html'
-    form_class = AccountSettingsForm
-    success_url = reverse_lazy('account_settings')
-
-    def form_valid(self, form):
-        customer = get_object_or_404(Customer, user=self.request.user)
-        customer.name = form.cleaned_data['name']
-        customer.phone = form.cleaned_data['phone']
-        customer.email = form.cleaned_data['email']
-        customer.address = form.cleaned_data['address']
-        customer.save()
-        messages.success(self.request, 'Your account has been updated.')
-        return super().form_valid(form)
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        customer = getattr(self.request.user, 'customer', None)
-        kwargs['instance'] = customer
-        return kwargs
-
-
-class EditAccountView(LoginRequiredMixin, FormView):
-    template_name = 'accounts/edit_account.html'
-    form_class = AccountSettingsForm
-
-    def get(self, request, *args, **kwargs):
-        customer = get_object_or_404(Customer, user=request.user)
-        form = AccountSettingsForm(instance=customer)
-        return render(request, self.template_name, {'form': form})
-
-    def post(self, request, *args, **kwargs):
-        customer = get_object_or_404(Customer, user=request.user)
-        form = AccountSettingsForm(request.POST, instance=customer)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your account has been updated.')
-            return redirect('accounts/account_settings')
-        else:
-            messages.error(request, 'Please correct the errors below.')
-        return render(request, self.template_name, {'form': form})
-
-
-class DeleteAccountView(LoginRequiredMixin, View):
-    template_name = 'accounts/delete_account.html'
-    def get(self, request, *args, **kwargs):
-        return render(request, 'accounts/delete_account.html')
-
-    def post(self, request, *args, **kwargs):
-        user = request.user
-        user.delete()
-        messages.success(request, 'Your account has been deleted.')
-        return redirect('home')
 
