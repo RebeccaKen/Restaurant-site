@@ -5,6 +5,7 @@ from django.utils import timezone
 from autoslug import AutoSlugField
 from django.forms import ModelForm
 from django.core.exceptions import ValidationError
+from django.urls import reverse
 
 
 
@@ -55,6 +56,9 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"Reservation for {self.name} on {self.date} at {self.time}"
+
+    def get_absolute_url(self):
+        return reverse('reservation_edit', args=[str(self.pk)])
 
 
 # model for feedback

@@ -9,17 +9,13 @@
 </head>
 <body>
     {% block content %}
-  <h1>Feedback Form</h1>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-  </form>
-
-  {% if submitted %}
-    <p>Thank you for your feedback!</p>
-  {% endif %}
-{% endblock %}
+    <h1>Edit Reservation</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Save</button>
+    </form>
+  {% endblock %}
 </body>
 </body>
 </html>

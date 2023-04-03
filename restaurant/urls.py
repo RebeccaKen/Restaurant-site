@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import HomePageView, MenuListView, TemplateView, ReservationEditView
-from .views import ReservationCreateView, FeedbackListView, ReservationDeleteView
-
+from .views import HomePageView, MenuListView, TemplateView
+from .views import ReservationCreateView, FeedbackListView
+from .views import ReservationEditView, ReservationDeleteView
 
 
 urlpatterns = [
