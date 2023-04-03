@@ -108,10 +108,12 @@ class AccountSettingsView(LoginRequiredMixin, FormView):
 
 class EditAccountView(LoginRequiredMixin, FormView):
     template_name = 'accounts/edit_account.html'
+    form_class = AccountSettingsForm
+
     def get(self, request, *args, **kwargs):
         customer = get_object_or_404(Customer, user=request.user)
         form = AccountSettingsForm(instance=customer)
-        return render(request, 'edit_account.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request, *args, **kwargs):
         customer = get_object_or_404(Customer, user=request.user)
@@ -119,16 +121,16 @@ class EditAccountView(LoginRequiredMixin, FormView):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your account has been updated.')
-            return redirect('account_settings')
+            return redirect('accounts/account_settings')
         else:
             messages.error(request, 'Please correct the errors below.')
-        return render(request, 'edit_account.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
 
 
 class DeleteAccountView(LoginRequiredMixin, View):
     template_name = 'accounts/delete_account.html'
     def get(self, request, *args, **kwargs):
-        return render(request, 'delete_account.html')
+        return render(request, 'accounts/delete_account.html')
 
     def post(self, request, *args, **kwargs):
         user = request.user
