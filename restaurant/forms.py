@@ -11,16 +11,28 @@ class FeedbackForm(forms.ModelForm):
             'comments': forms.Textarea(attrs={'rows': 5}),
         }
 
+
 class AccountSettingsForm(forms.ModelForm):
     class Meta:
-        model = Customer 
+        model = Customer
         fields = ['name', 'phone', 'email', 'address']
 
     def __init__(self, *args, **kwargs):
-        self.instance = kwargs.get('instance')
         super().__init__(*args, **kwargs)
-        if self.instance:
-            self.fields['name'].initial = self.instance.name
-            self.fields['phone'].initial = self.instance.phone
-            self.fields['email'].initial = self.instance.email
-            self.fields['address'].initial = self.instance.address
+        self.fields['name'].widget.attrs.update({'class': 'form-control'})
+        self.fields['phone'].widget.attrs.update({'class': 'form-control'})
+        self.fields['email'].widget.attrs.update({'class': 'form-control'})
+        self.fields['address'].widget.attrs.update({'class': 'form-control'})
+
+
+class EditAccountForm(forms.ModelForm):
+    class Meta:
+        model = Customer
+        fields = ['name', 'phone', 'email', 'address']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['name'].widget.attrs.update({'class': 'form-control'})
+        self.fields['phone'].widget.attrs.update({'class': 'form-control'})
+        self.fields['email'].widget.attrs.update({'class': 'form-control'})
+        self.fields['address'].widget.attrs.update({'class': 'form-control'})
