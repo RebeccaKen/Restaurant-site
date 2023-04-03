@@ -85,7 +85,7 @@ class FeedbackListView(ListView):
 
 
 class AccountSettingsView(LoginRequiredMixin, FormView):
-    template_name = 'account_settings.html'
+    template_name = 'accounts/account_settings.html'
     form_class = AccountSettingsForm
     success_url = reverse_lazy('account_settings')
 
@@ -101,11 +101,13 @@ class AccountSettingsView(LoginRequiredMixin, FormView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['instance'] = self.request.user.customer
+        customer = getattr(self.request.user, 'customer', None)
+        kwargs['instance'] = customer
         return kwargs
 
 
 class EditAccountView(LoginRequiredMixin, FormView):
+    template_name = 'accounts/edit_account.html'
     def get(self, request, *args, **kwargs):
         customer = get_object_or_404(Customer, user=request.user)
         form = AccountSettingsForm(instance=customer)
@@ -124,6 +126,7 @@ class EditAccountView(LoginRequiredMixin, FormView):
 
 
 class DeleteAccountView(LoginRequiredMixin, View):
+    template_name = 'accounts/delete_account.html'
     def get(self, request, *args, **kwargs):
         return render(request, 'delete_account.html')
 

@@ -4,6 +4,8 @@ from cloudinary.models import CloudinaryField
 from django.utils import timezone
 from autoslug import AutoSlugField
 from django.forms import ModelForm
+from django.core.exceptions import ValidationError
+
 
 
 # model for Menu
@@ -91,10 +93,11 @@ class Customer(models.Model):
     phone = models.CharField(max_length=20)
     address = models.CharField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='name', unique=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return self.name
-
-
-
+        
+    def clean(self):
+        if self.user is None:
+            raise ValidationError("User cannot be empty.")
