@@ -38,19 +38,26 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'reservation' %}">Reservations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_edit' reservation.id %}">Edit Reservations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_delete' %}">Delete Reservations</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'menu' %}">Menus</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'feedback' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'reservation' %}">Reservations</a>
+                    </li>
+                    {% if user.reservation.exists %}
+                    <a href="{% url 'reservation_edit' pk=obj.pk %}">Edit Reservation</a>
+                    <form method="post" action="{% url 'reservation_delete'%}">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete Reservation">
+                    </form>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_edit' pk=obj.pk %}">Edit Reservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_delete' %}">Reservations</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">

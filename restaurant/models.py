@@ -6,6 +6,7 @@ from autoslug import AutoSlugField
 from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 from django.urls import reverse
+from datetime import datetime
 
 
 
@@ -44,11 +45,12 @@ class MenuItem(models.Model):
 
 
 class Reservation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200, null=False, blank=False)
     number_of_guests = models.IntegerField(blank=False, default=1)
     email = models.EmailField(null=False)
     phone = models.CharField(max_length=20, null=False)
-    date = models.DateTimeField(default='2022-01-01 12:00:00')
+    date = models.DateTimeField(auto_now=True)
     notes = models.CharField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='name', unique=True)
     created_at = models.DateTimeField(auto_now=True)
@@ -92,6 +94,7 @@ class Feedback(models.Model):
 
 
 class Customer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     phone = models.CharField(max_length=20)

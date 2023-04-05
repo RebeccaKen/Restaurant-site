@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'restaurant',
     'bootstrap4',
-    'autoslug'
+    'autoslug',
 ]
 
 SITE_ID = 1

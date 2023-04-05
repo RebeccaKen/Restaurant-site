@@ -23,6 +23,9 @@ class MenuListView(ListView):
     template_name = 'menu.html'
     context_object_name = 'menus'
 
+def reservation_detail(request, reservation_id):
+    reservation = get_object_or_404(Reservation, pk=reservation_id)
+    return render(request, 'reservation_detail.html', {'reservation': reservation})
 
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
@@ -32,6 +35,9 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+    
+    def __str__(self):
+        return f'{self.user.username} - Reservation #{self.id}'
 
     def get_success_url(self):
         messages.success(self.request, 'Thank you for your reservation!')
@@ -51,9 +57,14 @@ class ReservationEditView(LoginRequiredMixin, UpdateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+    def get_object(self):
+        id = self.kwargs.get('id')
+        return get_object_or_404(Reservation, id=id, user=self.request.user)
+
     def get_success_url(self):
         messages.success(self.request, 'Your reservation has been edited!')
         return reverse_lazy('home')
+
 
 class ReservationDeleteView(LoginRequiredMixin, DeleteView):
     model = Reservation
@@ -63,7 +74,6 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
-
 
 class FeedbackListView(ListView):
     model = Feedback
