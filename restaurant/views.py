@@ -41,12 +41,19 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
 class ReservationEditView(LoginRequiredMixin, UpdateView):
     model = Reservation
     template_name = 'reservation_edit.html'
-    fields = ['name', 'email', 'phone', 'date', 'notes']
+    fields = ['name', 'number_of_guests', 'email', 'phone', 'date', 'notes', 'is_approved']
 
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        messages.success(self.request, 'Your reservation has been edited!')
+        return reverse_lazy('home')
 
 class ReservationDeleteView(LoginRequiredMixin, DeleteView):
     model = Reservation
