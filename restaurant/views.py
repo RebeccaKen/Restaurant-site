@@ -42,7 +42,7 @@ class ReservationDetailView(LoginRequiredMixin, DetailView):
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
     template_name = 'reservation_create.html'
-    fields = ['name', 'email', 'phone', 'number_of_guests', 'date', 'notes',]
+    fields = ['name', 'email', 'phone', 'number_of_guests', 'reservation_time', 'reservation_date', 'notes',]
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -69,7 +69,7 @@ class ReservationListView(LoginRequiredMixin, ListView):
 class ReservationEditView(LoginRequiredMixin, UpdateView):
     model = Reservation
     template_name = 'reservation_edit.html'
-    fields = ['name', 'number_of_guests', 'email', 'phone', 'date', 'notes', 'is_approved']
+    fields = ['name', 'number_of_guests', 'email', 'phone', 'reservation_time', 'reservation_date', 'notes', 'is_approved']
 
     def get_queryset(self):
         queryset = super().get_queryset()

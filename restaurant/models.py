@@ -7,6 +7,7 @@ from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from datetime import datetime
+from datetime import date, time
 
 
 
@@ -50,7 +51,8 @@ class Reservation(models.Model):
     number_of_guests = models.IntegerField(blank=False, default=1)
     email = models.EmailField(null=False)
     phone = models.CharField(max_length=20, null=False)
-    date = models.DateTimeField(auto_now=True)
+    reservation_date = models.DateField(null=False, default=date(2023, 12, 31))
+    reservation_time = models.TimeField(default=time(12, 0, 0))
     notes = models.CharField(max_length=200, blank=True)
     slug = AutoSlugField(populate_from='name', unique=True)
     created_at = models.DateTimeField(auto_now=True)

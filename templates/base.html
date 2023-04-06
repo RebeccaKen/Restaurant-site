@@ -52,12 +52,6 @@
                     <a href="{% url 'reservation_delete' reservation.pk %}">Delete</a>
                     {% endif %}
                     {% endfor %}
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'reservation_edit' pk=reservation.pk %}">Edit Reservations</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'reservation_delete' reservation.pk %}">Reservations</a>
-                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
