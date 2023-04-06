@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservation template</title>
+</head>
+<body>
+    <form method="post">    
+<h1>Reservations</h1>
+{% for reservation in object_list %}
+  {% if user.is_authenticated and user.username == reservation.user.username %}
+    <p>Date: {{ reservation.date }}</p>
+    <p>Time: {{ reservation.time }}</p>
+    <p>Number of guests: {{ reservation.num_guests }}</p>
+    <button>Edit</button>
+    <button>Delete</button>
+  {% endif %}
+{% empty %}
+  <p>No reservations found.</p>
+{% endfor %}
+{% endblock %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>     
+</body>
+</html>
