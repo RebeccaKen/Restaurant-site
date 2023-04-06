@@ -44,20 +44,19 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'feedback' %}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'reservation' %}">Reservations</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_create' %}">Reservations</a>
                     </li>
-                    {% if user.reservation.exists %}
-                    <a href="{% url 'reservation_edit' pk=obj.pk %}">Edit Reservation</a>
-                    <form method="post" action="{% url 'reservation_delete'%}">
-                        {% csrf_token %}
-                        <input type="submit" value="Delete Reservation">
-                    </form>
+                    {% for reservation in reservations %}
+                    {% if user.is_authenticated and user.username == reservation.user %}
+                    <a href="{% url 'reservation_edit' reservation.pk %}">Edit</a>
+                    <a href="{% url 'reservation_delete' reservation.pk %}">Delete</a>
                     {% endif %}
+                    {% endfor %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_edit' pk=obj.pk %}">Edit Reservations</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'reservation_edit' pk=reservation.pk %}">Edit Reservations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_delete' %}">Reservations</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'reservation_delete' reservation.pk %}">Reservations</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">

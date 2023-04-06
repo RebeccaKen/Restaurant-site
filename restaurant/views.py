@@ -23,13 +23,25 @@ class MenuListView(ListView):
     template_name = 'menu.html'
     context_object_name = 'menus'
 
-def reservation_detail(request, reservation_id):
-    reservation = get_object_or_404(Reservation, pk=reservation_id)
-    return render(request, 'reservation_detail.html', {'reservation': reservation})
+
+class ReservationDetailView(LoginRequiredMixin, DetailView):
+    model = Reservation
+    template_name = 'reservation_detail.html'
+    context_object_name = 'reservation'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        user = self.request.user
+        if user.is_authenticated:
+            queryset = queryset.filter(user=user)
+        else:
+            queryset = queryset.none()
+        return queryset
+
 
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
-    template_name = 'reservation.html'
+    template_name = 'reservation_create.html'
     fields = ['name', 'email', 'phone', 'number_of_guests', 'date', 'notes',]
 
     def form_valid(self, form):
@@ -42,6 +54,16 @@ class ReservationCreateView(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         messages.success(self.request, 'Thank you for your reservation!')
         return reverse_lazy('home')
+
+
+class ReservationListView(LoginRequiredMixin, ListView):
+    model = Reservation
+    template_name = 'reservation_list.html'
+    context_object_name = 'reservations'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset
 
 
 class ReservationEditView(LoginRequiredMixin, UpdateView):
