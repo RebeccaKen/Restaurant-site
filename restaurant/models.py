@@ -59,7 +59,7 @@ class Reservation(models.Model):
     is_approved = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"Reservation for {self.name} on {self.date} at {self.time}"
+        return f"Reservation for {self.name} on {self.reservation_date} at {self.reservation_time}"
 
     def get_absolute_url(self):
         return reverse('reservation_edit', args=[str(self.pk)])

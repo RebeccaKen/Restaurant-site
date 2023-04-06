@@ -9,9 +9,10 @@
     <title>reservation template</title>
 </head>
 <body>
-    <form method="post">    
+    <form method="post">
+        {% csrf_token %}
 <h1>Reservations</h1>
-{% for reservation in object_list %}
+{% for reservation in reservations%}
   {% if user.is_authenticated and user.username == reservation.user.username %}
     <p>Date: {{ reservation.date }}</p>
     <p>Time: {{ reservation.time }}</p>
