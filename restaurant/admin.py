@@ -23,8 +23,10 @@ class MenuItemAdmin(admin.ModelAdmin):
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'reservation_date', 'reservation_time', 'phone', 'email')
-    list_filter = ('name', 'reservation_date', 'reservation_time', 'is_approved')
+    list_display = ('name', 'reservation_date', 'reservation_time', 'phone')
+    list_display = ('email', 'is_approved')
+    list_filter = ('name', 'reservation_date',)
+    list_filter = ('reservation_time', 'is_approved')
     search_fields = ('name', 'phone', 'email')
     actions = ['approve_reservation']
 

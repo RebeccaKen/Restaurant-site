@@ -47,11 +47,14 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'reservation_create' %}">Reservations</a>
                     </li>
                     {% for reservation in reservations %}
-                    {% if user.is_authenticated and user.username == reservation.user %}
-                    <a href="{% url 'reservation_edit' reservation.pk %}">Edit</a>
-                    <a href="{% url 'reservation_delete' reservation.pk %}">Delete</a>
-                    {% endif %}
-                    {% endfor %}
+                      {% if user.is_authenticated and user.username == reservation.user %}
+                        <button class="btn btn-primary" onclick="location.href='{% url 'reservation_edit' reservation.pk %}'">Edit</button>
+                        <form action="{% url 'reservation_delete' reservation.pk %}" method="POST" style="display:inline">
+                          {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                        {% endif %}
+                       {% endfor %}
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
