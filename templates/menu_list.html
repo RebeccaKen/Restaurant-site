@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% for menu in menus %}
+    <h2>{{ menu.name }}</h2>
+    <p>{{ menu.description }}</p>
+    <ul>
+    {% for item in menu.menu_items.all %}
+        <li>{{ item.name }} - {{ item.price }}</li>
+    {% endfor %}
+    </ul>
+{% endfor %}

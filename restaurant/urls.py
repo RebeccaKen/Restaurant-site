@@ -7,7 +7,7 @@ from .views import ReservationDetailView, ReservationListView
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
-    path('menu/', MenuListView.as_view(), name='menu'),
+    path('menu/', MenuListView.as_view(), name='menu_list'),
     path('reservation/create/', ReservationCreateView.as_view(), name='reservation_create'),
     path('reservations/', ReservationListView.as_view(), name='reservation_list'),
     path('reservation/<int:pk>/', ReservationDetailView.as_view(), name='reservation_detail'),

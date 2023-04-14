@@ -20,8 +20,12 @@ class HomePageView(TemplateView):
 
 class MenuListView(ListView):
     model = Menu
-    template_name = 'menu.html'
+    template_name = 'menu_list.html'
     context_object_name = 'menus'
+
+    def get_queryset(self):
+        # Retrieve all Menu objects and their associated MenuItem objects
+        return Menu.objects.prefetch_related('menuitem_set')
 
 
 class ReservationDetailView(LoginRequiredMixin, DetailView):
