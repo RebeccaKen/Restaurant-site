@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 
+{% block content %}
 {% for menu in menus %}
     <h2>{{ menu.name }}</h2>
     <p>{{ menu.description }}</p>
     <ul>
-    {% for item in menu.menu_items.all %}
-        <li>{{ item.name }} - {{ item.price }}</li>
-    {% endfor %}
+        {% for item in items %}
+            {% if item.menu == menu %}
+                <li>{{ item.name }} - ${{ item.price }}</li>
+                <li>{{ item.description}} - Allergens: {{ item.allergens }}</li>
+            {% endif %}
+        {% endfor %}
     </ul>
 {% endfor %}
+{% endblock content %}

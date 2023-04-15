@@ -11,21 +11,22 @@ from .forms import FeedbackForm
 from django.forms import ModelForm
 from allauth.account.forms import UserForm
 from django.views.generic.edit import FormView
+from .models import Menu, MenuItem
 
 #Views for restaurant website
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
-
 class MenuListView(ListView):
     model = Menu
     template_name = 'menu_list.html'
     context_object_name = 'menus'
 
-    def get_queryset(self):
-        # Retrieve all Menu objects and their associated MenuItem objects
-        return Menu.objects.prefetch_related('menuitem_set')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['items'] = MenuItem.objects.all()
+        return context
 
 
 class ReservationDetailView(LoginRequiredMixin, DetailView):
