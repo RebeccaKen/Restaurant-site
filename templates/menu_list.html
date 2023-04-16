@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% block content %}
 {% for menu in menus %}
     <h2>{{ menu.name }}</h2>
     <p>{{ menu.description }}</p>
