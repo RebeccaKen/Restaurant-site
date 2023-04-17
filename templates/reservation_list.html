@@ -1,31 +1,24 @@
 {% extends 'base.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reservation template</title>
-</head>
-<body>
-  {% block content %}
-    <h1>Reservations</h1>
-    {% if reservations %}
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Number of Guests</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Time</th>
-            <th>Date</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for reservation in reservations %}
+
+{% block content %}
+  <h1>Your Reservations</h1>
+  {% if reservations %}
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number of Guests</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Time</th>
+          <th>Date</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for reservation in reservations %}
+          {% if reservation.user == request.user %}
             <tr>
               <td>{{ reservation.name }}</td>
               <td>{{ reservation.number_of_guests }}</td>
@@ -33,15 +26,14 @@
               <td>{{ reservation.phone }}</td>
               <td>{{ reservation.reservation_time }}</td>
               <td>{{ reservation.reservation_date }}</td>
-              <td>{{ reservation.notes }}</td>
-              <td>{{ reservation.get_is_approved_display }}</td>
               <td><a href="{% url 'reservation_edit' reservation.id %}">Edit</a></td>
               <td><a href="{% url 'reservation_delete' reservation.id %}">Delete</a></td>
             </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    {% else %}
-      <p>No reservations found.</p>
-    {% endif %}
-  {% endblock %}
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You have no reservations.</p>
+  {% endif %}
+{% endblock %}

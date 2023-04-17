@@ -43,10 +43,10 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'menu_list' %}">Menus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'feedback' %}">Contact Us</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_create' %}">Reservations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'reservation_create' %}">Reservations</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'feedback' %}">Contact Us</a>
                     </li>
                     {% for reservation in reservations %}
                       {% if user.is_authenticated and user.username == reservation.user %}
@@ -58,6 +58,9 @@
                         {% endif %}
                        {% endfor %}
                     {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'reservation_user' %}">My Reservations</a></li>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>

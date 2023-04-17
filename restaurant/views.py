@@ -68,12 +68,18 @@ class ReservationListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        queryset = queryset.filter(user=self.request.user)
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['reservations'] = self.get_queryset()
         return context
+    
+    def user_reservations(self):
+        reservations = Reservation.objects.filter(user__email=self.request.user.email)
+        return render(self.request, 'reservation_user.html', {'reservations': reservations})
+
 
 class ReservationEditView(LoginRequiredMixin, UpdateView):
     model = Reservation
