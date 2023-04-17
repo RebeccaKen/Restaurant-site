@@ -89,7 +89,7 @@ class ReservationEditView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
     def get_object(self):
-        id = self.kwargs.get('id')
+        id = self.kwargs.get('pk')
         return get_object_or_404(Reservation, id=id, user=self.request.user)
 
     def get_success_url(self):
