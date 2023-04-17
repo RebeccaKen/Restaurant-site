@@ -9,11 +9,16 @@
     <title>reservation template</title>
 </head>
 <body>
-    <form method="post">
+    <form method="post"  action="{% url 'reservation_create' %}" onsubmit="displayMessage()">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>     
 </body>
 </html>
-{% endblock content %}
+<script>
+    function displayMessage() {
+      alert("Thank you for your reservation!");
+    }
+  </script>
+  {% endblock content %}

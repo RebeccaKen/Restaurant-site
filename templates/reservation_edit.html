@@ -1,21 +1,30 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation_update template</title>
+    <title>Reservation_edit template</title>
 </head>
 <body>
-    {% block content %}
-    <h1>Edit Reservation</h1>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Save</button>
-    </form>
+  {% block content %}
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h2 class="text-center mb-4">Edit Reservation</h2>
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+  
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   {% endblock %}
-</body>
 </body>
 </html>

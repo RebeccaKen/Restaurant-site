@@ -8,6 +8,15 @@
     <title>Reservation_delete template</title>
 </head>
 <body>
-    <h2>This is the reservation_delete template</h2>
+{% block content %}
+<h1>Delete Reservation</h1>
+<p>Are you sure you want to delete this reservation?</p>
+<form method="post">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{{ request.GET.next }}">
+  <button type="submit" class="btn btn-danger">Delete</button>
+  <a href="{% url 'reservation_list' %}?next={{ request.GET.next }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
 </body>
 </html>

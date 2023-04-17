@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +8,40 @@
     <title>reservation template</title>
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-<h1>Reservations</h1>
-{% for reservation in reservations%}
-  {% if user.is_authenticated and user.username == reservation.user.username %}
-    <p>Date: {{ reservation.date }}</p>
-    <p>Time: {{ reservation.time }}</p>
-    <p>Number of guests: {{ reservation.num_guests }}</p>
-    <button>Edit</button>
-    <button>Delete</button>
-  {% endif %}
-{% empty %}
-  <p>No reservations found.</p>
-{% endfor %}
-{% endblock %}
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>     
-</body>
-</html>
+  {% block content %}
+    <h1>Reservations</h1>
+    {% if reservations %}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number of Guests</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reservation in reservations %}
+            <tr>
+              <td>{{ reservation.name }}</td>
+              <td>{{ reservation.number_of_guests }}</td>
+              <td>{{ reservation.email }}</td>
+              <td>{{ reservation.phone }}</td>
+              <td>{{ reservation.reservation_time }}</td>
+              <td>{{ reservation.reservation_date }}</td>
+              <td>{{ reservation.notes }}</td>
+              <td>{{ reservation.get_is_approved_display }}</td>
+              <td><a href="{% url 'reservation_edit' reservation.id %}">Edit</a></td>
+              <td><a href="{% url 'reservation_delete' reservation.id %}">Delete</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No reservations found.</p>
+    {% endif %}
+  {% endblock %}
