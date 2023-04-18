@@ -9,16 +9,18 @@
     <title>reservation template</title>
 </head>
 <body>
-    <form method="post"  action="{% url 'reservation_create' %}" onsubmit="displayMessage()">
+    <form method="post"  action="{% url 'reservation_create' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>     
+      </form>
 </body>
 </html>
 <script>
-    function displayMessage() {
-      alert("Thank you for your reservation!");
-    }
-  </script>
+  if (reservation) {
+  const message = document.createElement("p");
+  message.textContent = "Thank you for making a reservation with us! We look forward to seeing you soon.";
+  document.body.appendChild(message);
+}
+</script>
   {% endblock content %}
