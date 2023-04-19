@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for menu in menus %}
-    <h2>{{ menu.name }}</h2>
-    <p>{{ menu.description }}</p>
-    <ul>
-        {% for item in items %}
-            {% if item.menu == menu %}
-                <li>{{ item.name }} - ${{ item.price }}</li>
-                <li>{{ item.description}} - Allergens: {{ item.allergens }}</li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-{% endfor %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            {% for menu in menus %}
+                <h2>{{ menu.name }}</h2>
+                <p>{{ menu.description }}</p>
+                <div class="row">
+                    {% for item in items %}
+                        {% if item.menu == menu %}
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>{{ item.name }} - ${{ item.price }}</li>
+                                    <li>{{ item.description}} - Allergens: {{ item.allergens }}</li>
+                                </ul>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock content %}
