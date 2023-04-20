@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
 <div class="container">
     <div class="row">
@@ -7,12 +8,22 @@
             <h1>Menu List</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <img src="https://res.cloudinary.com/djbdldshh/image/upload/v1681952497/Fries_1200x_v9hbu1.jpg" alt="Image" class="img-fluid">
+    {% for menu in menus %}
+    <div class="row mb-5">
+        <div class="col-md-6">
+            {% if menu.name == "Burgers" %}
+                <img src="https://res.cloudinary.com/djbdldshh/image/upload/v1682006889/Burger_1200x_pmbn5x.jpg" alt="Burger" class="img-fluid">
+            {% elif menu.name == "Pizzas" %}
+                <img src="https://res.cloudinary.com/djbdldshh/image/upload/v1682005235/pizza_1200x_hsybis.jpg" alt="Pizza" class="img-fluid">
+            {% elif menu.name == "Kid's Menu" %}
+                <img src="https://res.cloudinary.com/djbdldshh/image/upload/v1682005235/mini-burger_slvwuo.jpg" alt="Mini-burger" class="img-fluid">
+            {% elif menu.name == "Sides" %}
+                <img src="https://res.cloudinary.com/djbdldshh/image/upload/v1681952497/Fries_1200x_v9hbu1.jpg" alt="Fries" class="img-fluid">
+            {% elif menu.name == "Drinks" %}
+                <img src="https://res.cloudinary.com/djbdldshh/image/upload/v1682005235/Soda_1200x_mxwlmp.jpg" alt="Soda" class="img-fluid">
+            {% endif %}
         </div>
         <div class="col-md-6">
-            {% for menu in menus %}
             <div class="card mb-3">
                 <div class="card-header">
                     <h2>{{ menu.name }}</h2>
@@ -21,19 +32,21 @@
                     <p>{{ menu.description }}</p>
                     <ul class="list-group">
                         {% for item in items %}
-                        {% if item.menu == menu %}
-                        <li class="list-group-item">
-                            <h4>{{ item.name }} - ${{ item.price }}</h4>
-                            <p>{{ item.description }} - Allergens: {{ item.allergens }}</p>
-                        </li>
-                        {% endif %}
+                            {% if item.menu == menu %}
+                                <li class="list-group-item">
+                                    <h4>{{ item.name }} - ${{ item.price }}</h4>
+                                    <p>{{ item.description }}</p>
+                                    <p><b>Allergens:</b> {{ item.allergens }}</p>
+                                </li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
                 </div>
             </div>
-            {% empty %}
-            <p>No menus found.</p>
-            {% endfor %}
         </div>
     </div>
+    {% empty %}
+        <p>No menus found.</p>
+    {% endfor %}
+</div>
 {% endblock content %}
