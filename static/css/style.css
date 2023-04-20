@@ -87,26 +87,21 @@ button {
     font-size: 4em;
 }
 
-
 /* Reservation Create */
 
 #create-reservation-form form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+  align-items: center;
 }
   
 #create-reservation-form label {
-    flex-basis: 30%;
+    text-align: right;
 }
-  
-#create-reservation-form input {
-    flex-basis: 70%;
-}
-
 
 /* Reservation list*/
+
 .reservation-container {
     display: flex;
     flex-wrap: wrap;
