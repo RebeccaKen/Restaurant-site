@@ -8,11 +8,6 @@
         <li>{{ reservation.start_date }} - {{ reservation.end_date }}</li>
       {% endfor %}
     </ul>
-    <script>
-      const message = document.createElement("p");
-      message.textContent = "Thank you for making a reservation with us! We look forward to seeing you soon.";
-      document.body.appendChild(message);
-    </script>
   {% else %}
     <p>You have no reservations.</p>
   {% endif %}
