@@ -10,7 +10,7 @@
 <body>
   {% block content %}
   <h1>Feedback Form</h1>
-  <form method="post">
+  <form method="post" id="feedback-form">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit</button>
