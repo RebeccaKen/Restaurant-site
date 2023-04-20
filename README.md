@@ -68,4 +68,7 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 
 ### Technology Used 
 
-- Unsplash(for images)
+- Unsplash (for images)
+- Bootstrap
+- Django
+  
