@@ -1,39 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Your Reservations</h1>
-  {% if reservations %}
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Number of Guests</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Time</th>
-          <th>Date</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for reservation in reservations %}
-          {% if reservation.user == request.user %}
-            <tr>
-              <td>{{ reservation.name }}</td>
-              <td>{{ reservation.number_of_guests }}</td>
-              <td>{{ reservation.email }}</td>
-              <td>{{ reservation.phone }}</td>
-              <td>{{ reservation.reservation_time }}</td>
-              <td>{{ reservation.reservation_date }}</td>
-              <td><a href="{% url 'reservation_edit' reservation.id %}">Edit</a></td>
-              <td><a href="{% url 'reservation_delete' reservation.id %}">Delete</a></td>
-            </tr>
-          {% endif %}
-        {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-    <p>You have no reservations.</p>
-  {% endif %}
+<h1>Your Reservations</h1>
+{% if reservations %}
+  <div class="reservation-container">
+    {% for reservation in reservations %}
+      {% if reservation.user == request.user %}
+        <div class="reservation">
+          <div class="reservation-details">
+            <p><strong>Name:</strong> {{ reservation.name }}</p>
+            <p><strong>Number of Guests:</strong> {{ reservation.number_of_guests }}</p>
+            <p><strong>Email:</strong> {{ reservation.email }}</p>
+            <p><strong>Phone:</strong> {{ reservation.phone }}</p>
+            <p><strong>Time:</strong> {{ reservation.reservation_time }}</p>
+            <p><strong>Date:</strong> {{ reservation.reservation_date }}</p>
+          </div>
+          <div class="reservation-actions">
+            <a href="{% url 'reservation_edit' reservation.id %}">Edit</a>
+            <a href="{% url 'reservation_delete' reservation.id %}">Delete</a>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% else %}
+  <p>You have no reservations.</p>
+{% endif %}
 {% endblock %}
