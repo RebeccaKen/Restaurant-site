@@ -1,12 +1,12 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #0d51d8;
 }
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #070707;
 }
 
 .red-o {
@@ -22,7 +22,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #ffffff;
 }
 
 .main-bg {
@@ -140,3 +140,18 @@ body {
     background: transparent;
     border: none;
 }
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .nav-item {
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
