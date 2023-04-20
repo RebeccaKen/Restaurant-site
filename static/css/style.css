@@ -89,21 +89,7 @@ button {
 
 /* Reservation Create */
 
-#create-reservation-form form {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 10px;
-  align-items: center;
-}
-  
-#create-reservation-form label {
-    text-align: right;
-}
-
-#create-reservation-form textarea[name="notes"] {
-  height: 150px; 
-  width: 150px;
-}
+/* Reservation Edit */
 
 /* Reservation list*/
 

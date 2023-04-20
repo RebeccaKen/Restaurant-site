@@ -9,12 +9,15 @@
     <title>Create Reservation</title>
 </head>
 <body>
-  <h1>Make a reservation</h1>
-    <form method="post"  action="{% url 'reservation_create' %}" id="create-reservation-form">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-3">
+      <h1 class="text-center mb-4">Make a reservation</h1>
+      <form method="post" action="{% url 'reservation_create' %}" id="create-reservation-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary d-block mx-auto mt-3">Submit</button>
       </form>
+    </div>
+  </div>
 </body>
-</html>
   {% endblock content %}
