@@ -52,16 +52,20 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 
 ### Computer screen 
 
-![](assets/images/wireframes/landing-page.jpg)
-![](assets/images/wireframes/reservation-page.jpg)
-![](assets/images/wireframes/menu-page.jpg)
-![](assets/images/wireframes/food-items-page.jpg)
-![](assets/images/wireframes/contact-page.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1681953169/Landing_Page_el2ykk.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1681953170/Reservation_page_pjlql0.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1681953169/Menu_page_uhecfh.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1681953169/Contact_page_u2rx7k.jpg)
+
 
 ### Mobile screen 
 
-![](assets/images/wireframes/mobile-landing-page.jpg)
-![](assets/images/wireframes/mobile-reservation-page.jpg)
-![](assets/images/wireframes/mobile-menu-page.jpg)
-![](assets/images/wireframes/mobile-order-page.jpg)
-![](assets/images/wireframes/mobile-contact-page.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1681953169/Mobile_Landing_page_fwa1sm.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1681953170/Mobile_Reservation_page_y7mepu.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1681953505/Mobile_Menu_Page_g0vlzd.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1681953169/Mobile_Contact_page_apcchi.jpg)
+
+
+### Technology Used 
+
+- Unsplash(for images)
