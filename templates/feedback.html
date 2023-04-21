@@ -9,17 +9,33 @@
 </head>
 <body>
   {% block content %}
-  <h1>Feedback Form</h1>
-  <form method="post" id="feedback-form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-  </form>
+  <header class="p-3 text-black">
+    <h1>Feedback Form</h1>
+  </header>
+  <div class="container mt-3">
+    <form method="post" id="feedback-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
 
-  {% if submitted %}
-    <p>Thank you for your feedback!</p>
-  {% endif %}
-{% endblock %}
-</body>
-</html>
+    <div id="thank-you" class="d-none bg-danger text-white p-3 fixed-top text-center">
+      Thank you for your feedback!
+    </div>
+  </div>
+
+  <script>
+  const form = document.querySelector('#feedback-form');
+  const thankYou = document.querySelector('#thank-you');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    thankYou.classList.remove('d-none');
+    setTimeout(() => {
+      thankYou.classList.add('d-none');
+      form.reset(); // reset the form after 3 seconds
+    }, 3000); // 3000 milliseconds = 3 seconds
+  });
+  </script>
+  {% endblock %}
     
