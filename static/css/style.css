@@ -57,6 +57,17 @@ button {
     position: relative;
 }
 
+.logo-container {
+  position: absolute;
+  top: 27%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  max-width: 500px;
+
+}
 /* Menu-list */
 
 
