@@ -6,8 +6,15 @@
 
 {% block content %}
 <h1>{% trans "Sign Out" %}</h1>
-
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <p>{% blocktrans %}Are you sure you want to sign out?{% endblocktrans %}</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <form method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}
