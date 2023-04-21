@@ -1,8 +1,7 @@
-
-
-body {
-    font-family: Oswald, Lato;
-    font-weight:500;
+.body {
+  margin: 0;
+  font-family: Oswald, Lato;
+  font-weight:500;
 }
 
 
@@ -55,27 +54,6 @@ button {
 .image-container {
     position: relative;
 }
-/* 
-.logo-container {
-  position: absolute;
-  top: 27%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-}
-
-.logo-container img {
-  max-width: 100%;
-  transition: transform 0.3s ease-in-out; 
-}
-
-.logo {
-  max-width: 500px;
-}
-
-.logo-container:hover img {
-  transform: scale(1.2);
-} */
-
 
 .sentence-container {
   margin-top: 5%;
