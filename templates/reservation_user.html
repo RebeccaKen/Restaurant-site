@@ -1,19 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Your Reservations</h1>
-  {% if reservations %}
-    <ul>
-      {% for reservation in reservations %}
-        <li>{{ reservation.start_date }} - {{ reservation.end_date }}</li>
-      {% endfor %}
-    </ul>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>Your Reservations</h1>
+          {% if reservations %}
+          <ul>
+          {% for reservation in reservations %}
+          <li>{{ reservation.start_date }} - {{ reservation.end_date }}</li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   {% else %}
   <div class="d-flex justify-content-center align-items-center">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 text-center">
-          <p>You have no reservations.</p>
+        <div class="col-12 text-center d-flex justify-content-center align-items-center">
+          <p><b>You have no reservations.</b></p>
         </div>
       </div>
     </div>
