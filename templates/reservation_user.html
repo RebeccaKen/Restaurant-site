@@ -9,6 +9,14 @@
       {% endfor %}
     </ul>
   {% else %}
-    <p>You have no reservations.</p>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>You have no reservations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
   {% endif %}
 {% endblock %}
