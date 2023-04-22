@@ -198,3 +198,10 @@ button {
       max-width: 50%;
     }
   }
+
+@media only screen and (max-width: 375px) {
+    .create-reservation-form {
+      height: auto;
+      margin-top: 20px;
+    }
+  }
