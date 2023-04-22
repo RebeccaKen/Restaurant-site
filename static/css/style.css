@@ -78,6 +78,7 @@ button {
   font-size: 18px;
   line-height: 1.5;
   text-align: justify;
+  margin-bottom: 10%;
 }
 
 .about-us img {
@@ -180,16 +181,16 @@ button {
 
 .footer {
   background-color: white;
+  margin-top: 10%;
 }
 
 
 /* Media Queries */
-
-@media (max-width: 375px) {
-    .feedback-form .textarea {
-      font-size: 16px;
-    }
+@media screen and (max-width: 768px) {
+  .id_comments {
+    max-width: 50%;
   }
+}
 
 @media screen and (max-width: 768px) {
     .logo-container img {

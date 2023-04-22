@@ -12,9 +12,19 @@
   <header class="p-3 text-black">
     <h1>Feedback Form</h1>
   </header>
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>If you have any inquiries please get in touch via the form below. </p>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container mt-3">
     <form method="post" id="feedback-form">
       {% csrf_token %}
+      
       {{ form.as_p }}
       <button type="submit" class="btn btn-danger mt-3">Submit</button>
     </form>
