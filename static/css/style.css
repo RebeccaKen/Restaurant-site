@@ -26,11 +26,13 @@ form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: auto;
+    align-items: center;
+    max-width: 500px;
+    height: auto;
     margin: auto;
     padding: 20px;
     border: 1px solid #050505;
-}
+  }
   
 label {
     padding:2%;
@@ -104,7 +106,7 @@ button {
 
   
 .card-header {
-    background-color: #f5f5f5;
+    background-color: #faccfc;
     padding: 1rem;
     margin-bottom: 1rem;
     display: grid;
@@ -115,6 +117,7 @@ button {
 .card-header h2 {
     margin: 5%;
     font-size: 4em;
+    background-color: #faccfc;
 }
 
 /* Reservation Create */
@@ -190,11 +193,5 @@ button {
 @media screen and (max-width: 768px) {
   .logo-container img {
       max-width: 50%;
-    }
-  }
-
-@media screen and (max-width: 375px) {
-  .signup {
-      margin-bottom: 20%;
     }
   }
