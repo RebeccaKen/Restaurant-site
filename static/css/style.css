@@ -26,7 +26,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 500px;
+    max-width: auto;
     margin: auto;
     padding: 20px;
     border: 1px solid #050505;
@@ -186,15 +186,15 @@ button {
 
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
-  .id_comments {
-    max-width: 50%;
-  }
-}
 
 @media screen and (max-width: 768px) {
-    .logo-container img {
+  .logo-container img {
       max-width: 50%;
     }
   }
 
+@media screen and (max-width: 375px) {
+  .signup {
+      margin-bottom: 20%;
+    }
+  }

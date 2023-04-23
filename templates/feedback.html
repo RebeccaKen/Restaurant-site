@@ -24,7 +24,6 @@
   <div class="container mt-3">
     <form method="post" id="feedback-form">
       {% csrf_token %}
-      
       {{ form.as_p }}
       <button type="submit" class="btn btn-danger mt-3">Submit</button>
     </form>
