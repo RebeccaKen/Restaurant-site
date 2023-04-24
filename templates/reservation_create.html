@@ -10,13 +10,15 @@
 </head>
 <body>
   <div class="container d-flex justify-content-center align-items-center">
-    <div class="card p-3">
-      <h1 class="text-center mb-4">Make a reservation</h1>
-      <form method="post" action="{% url 'reservation_create' %}" id="create-reservation-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-danger d-block mx-auto mt-3">Submit</button>
-      </form>
+    <div class = "row">
+      <div class="card p-4">
+        <h1 class="text-center">Make a reservation</h1>
+          <form method="post" action="{% url 'reservation_create' %}" id="create-reservation-form" class="form-vertical" style="margin-bottom: 50px;">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-danger d-block mx-auto mt-3">Submit</button>
+          </form>
+        </div>
     </div>
   </div>
 </body>

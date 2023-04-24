@@ -215,6 +215,20 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  #create-reservation-form{
+    max-width: 90%;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #create-reservation-form{
+    max-width: 80%;
+    font-size: 0.8rem;
+  }
+}
+
 
 
 
