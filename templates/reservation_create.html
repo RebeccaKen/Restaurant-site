@@ -13,6 +13,11 @@
     <div class = "row">
       <div class="card p-4">
         <h1 class="text-center">Make a reservation</h1>
+        {% if reservation_success %}
+        <div class="alert alert-success mt-3" role="alert">
+          Your reservation has been submitted successfully!
+        </div>
+          {% endif %}
           <form method="post" action="{% url 'reservation_create' %}" id="create-reservation-form" class="form-vertical" style="margin-bottom: 50px;">
           {% csrf_token %}
           {{ form.as_p }}
@@ -22,4 +27,22 @@
     </div>
   </div>
 </body>
+<script>
+  def create_reservation(request):
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            reservation = form.save()
+            reservation_success = True
+    else:
+        form = ReservationForm()
+        reservation_success = False
+
+    context = {
+        'form': form,
+        'reservation_success': reservation_success,
+    }
+
+    return render(request, 'create_reservation.html', context)
+</script>
   {% endblock content %}
