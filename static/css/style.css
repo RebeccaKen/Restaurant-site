@@ -195,3 +195,12 @@ button {
       max-width: 50%;
     }
   }
+
+@media (max-width: 767px) { 
+  .order-md-1 {
+      order: 2;
+  }
+  .order-md-2 {
+      order: 1;
+  }
+}

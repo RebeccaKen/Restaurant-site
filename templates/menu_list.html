@@ -4,13 +4,13 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-12">
             <h1><b>Menus</b></h1>
         </div>
     </div>
     {% for menu in menus %}
     <div class="row mb-5">
-        <div class="col-md-6">
+        <div class="col-md-6 order-md-1">
             {% if menu.name == "Burgers" %}
                 <img src="https://res.cloudinary.com/djbdldshh/image/upload/v1682006889/Burger_1200x_pmbn5x.jpg" alt="Burger" class="img-fluid">
             {% elif menu.name == "Pizzas" %}
@@ -23,7 +23,7 @@
                 <img src="https://res.cloudinary.com/djbdldshh/image/upload/v1682005235/Soda_1200x_mxwlmp.jpg" alt="Soda" class="img-fluid">
             {% endif %}
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 order-md-2">
             <div class="card mb-3">
                 <div class="card-header">
                     <h2>{{ menu.name }}</h2>

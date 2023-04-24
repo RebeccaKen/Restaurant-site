@@ -46,11 +46,16 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 12. As a user, I want to be able to make a reservation request for a table for a specific date/time so that I will know if I have a table when I arrive.
 13. As a user, I want to receive an email confirming my reservation so that I know my reservation is confirmed.
 15. As a user, I can browse the restaurants' menu so I can decide what to order.
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294209/Coolers_Palette_nw9nhn.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294312/Navy_Blue_Pink_Text_Logo_wqowsz.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682035278/website-logo_jvli9b.jpg)
+
     
 [Wireframes](Wireframes.md)
 ## Wireframes
 
-[Testing](Testing.md)
+[Testing](testing.md)
 ## Wireframes
 
 
@@ -59,4 +64,5 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 - Unsplash 
 - Bootstrap
 - Django
+- Cloudinary
   
