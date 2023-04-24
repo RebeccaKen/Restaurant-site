@@ -211,3 +211,11 @@ button {
     max-height: 70vh;
   }
 }
+
+
+@media (max-width: 376px) {
+  #id_comments{
+    font-size: 14px;
+    width:215px;
+  }
+}
