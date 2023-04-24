@@ -71,7 +71,7 @@ class Reservation(models.Model):
 
 
 class Feedback(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField()
     comments = models.TextField()
     date = models.DateTimeField(auto_now=True)
