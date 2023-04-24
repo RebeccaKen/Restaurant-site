@@ -49,7 +49,27 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294209/Coolers_Palette_nw9nhn.jpg)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294312/Navy_Blue_Pink_Text_Logo_wqowsz.jpg)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682035278/website-logo_jvli9b.jpg)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302579/Artistic_Textured_Ink_Brush_Stroke_Brand_Logo_bkneln.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302767/Screenshot_2023-04-24_at_03-18-58_Mr._D_z_Route_66_Diner_ivic6h.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302814/Dropdown_menu_zo0mp0.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302985/Screenshot_2023-04-24_at_03-22-26_Mr._D_z_Route_66_Diner_xoekj5.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302823/Main-with-logo_wwo02c.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302812/about-us_hrlgtd.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302814/Dropdown_menu_zo0mp0.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302816/Feedback_form_d4fube.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302818/Feedback-thank-you_mldxal.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302825/Menu_ojvjab.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302829/Reservation-_create_krlmsc.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302833/Reservation-list_t6ng0y.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302831/Reservation-edit_lc2hhw.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302830/Reservation-delete_vvlkrz.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302833/Reservation-list_t6ng0y.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302837/Sign-out_mnszdy.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682303793/sign-up_otztff.png)
+
+
 
     
 [Wireframes](Wireframes.md)
