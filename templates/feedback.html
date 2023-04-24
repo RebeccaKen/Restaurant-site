@@ -12,29 +12,17 @@
   <header class="p-3 text-black" aria-label="Feedback Form Header">
     <h1>Feedback Form</h1>
   </header>  
-  <div class="d-flex justify-content-center align-items-center">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 text-center">
-          <p>If you have any inquiries please get in touch via the form below. </p>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="container mt-3">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 text-center">
-          <form method="post" id="feedback-form">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 text-center">
+        <form method="post" id="feedback-form">
           {% csrf_token %}
           {{ form.as_p }}
           <button type="submit" class="btn btn-danger mt-3">Submit</button>
-          </form>
-        </div>
+        </form>
       </div>
     </div>
   </div>
-
     <div id="thank-you" class="d-none bg-danger text-white p-3 fixed-top text-center">
       Thank you for your feedback!
     </div>
