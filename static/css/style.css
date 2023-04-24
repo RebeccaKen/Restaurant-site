@@ -120,11 +120,6 @@ button {
     background-color: #faccfc;
 }
 
-/* Reservation Create */
-
-/* Reservation Edit */
-
-/* Reservation list*/
 
 .reservation-container {
   display: flex;
@@ -219,6 +214,8 @@ button {
     width:215px;
   }
 }
+
+
 
 
 
