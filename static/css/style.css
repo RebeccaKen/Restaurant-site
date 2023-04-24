@@ -72,17 +72,6 @@ button {
   box-sizing: border-box;
 }
 
-.about-us h2 {
-  align-items: center;
-}
-
-.about-us {
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: justify;
-  margin-bottom: 10%;
-}
-
 .about-us img {
   max-width: 100%;
   margin: 30px 0;
@@ -93,11 +82,11 @@ button {
 
 
 #menu-list .row:nth-child(even) .col-md-6:first-child {
-    order: 2;
+    order: 2 !important;
   }
   
 .row:nth-child(odd) .col-md-6:first-child {
-    order: 1;
+    order: 1 !important;
 }
 
 .card-body {
