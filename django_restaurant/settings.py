@@ -33,6 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['restaurant-site-app.herokuapp.com', 'localhost']
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Email account verification set to none
 ACCOUNT_EMAIL_VERIFICATION = 'none'
