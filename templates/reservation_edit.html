@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +10,18 @@
     <title>Reservation_edit template</title>
 </head>
 <body>
-  {% block content %}
-    <h1>Edit Reservation</h1>
-    <form method="post">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class = "row">
+      <div class="card p-4">
+      <h1 class="text-center">Edit Reservation</h1>
+      <form method="post" style="margin-bottom: 50px;">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit">Save Changes</button>
-    </form>
+      </form>
+      </div>
+    </div>
+  </div>
   {% endblock %}
 </body>
 </html>
