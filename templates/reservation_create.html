@@ -27,22 +27,4 @@
     </div>
   </div>
 </body>
-<script>
-  def create_reservation(request):
-    if request.method == 'POST':
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            reservation = form.save()
-            reservation_success = True
-    else:
-        form = ReservationForm()
-        reservation_success = False
-
-    context = {
-        'form': form,
-        'reservation_success': reservation_success,
-    }
-
-    return render(request, 'create_reservation.html', context)
-</script>
   {% endblock content %}
