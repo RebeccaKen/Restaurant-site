@@ -22,11 +22,18 @@
     </div>
   </div>
   <div class="container mt-3">
-    <form method="post" id="feedback-form">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn btn-danger mt-3">Submit</button>
-    </form>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-center">
+          <form method="post" id="feedback-form">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-danger mt-3">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div id="thank-you" class="d-none bg-danger text-white p-3 fixed-top text-center">
       Thank you for your feedback!
