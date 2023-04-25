@@ -47,6 +47,9 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 13. As a user, I want to receive see a notification confirming my reservation has been submitted so that I know my reservation has been submitted. 
 14. As a user, I can browse the restaurants' menu so I can decide what to order.
 
+
+## Features
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294209/Coolers_Palette_nw9nhn.jpg)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294312/Navy_Blue_Pink_Text_Logo_wqowsz.jpg)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302579/Artistic_Textured_Ink_Brush_Stroke_Brand_Logo_bkneln.png)
@@ -85,8 +88,24 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 
 ### Technology Used 
 
-- Unsplash 
+
 - Bootstrap
 - Django
+- Python
 - Cloudinary
+- Font Awesome
+- Google Dev Tools
+- Github
+- Gitpod 
+- Grammerly
+- png2jpg
+- Heroku
+- PostgreSQL
+- Canva
   
+
+### Credits 
+
+- Unsplash 
+- Am I Responsive?
+
