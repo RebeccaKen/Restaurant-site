@@ -1,6 +1,6 @@
 # Mr D'z Route 66 Diner
 
-![Image of deployed website](link to image)
+![Image of deployed website](https://res.cloudinary.com/djbdldshh/image/upload/v1682384287/Am_I_Responsive_lkiian.png)
 
 
 
@@ -54,7 +54,7 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302814/Dropdown_menu_zo0mp0.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302985/Screenshot_2023-04-24_at_03-22-26_Mr._D_z_Route_66_Diner_xoekj5.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302823/Main-with-logo_wwo02c.png)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302812/about-us_hrlgtd.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682384582/About-us_section_x7i6mm.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302814/Dropdown_menu_zo0mp0.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302816/Feedback_form_d4fube.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302818/Feedback-thank-you_mldxal.png)
@@ -68,6 +68,8 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302837/Sign-out_mnszdy.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682303793/sign-up_otztff.png)
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682384869/footer.png_jvabvp.png)
+
 
 
 
