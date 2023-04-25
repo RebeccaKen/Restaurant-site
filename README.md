@@ -44,8 +44,8 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 10. As a user, I can log in and I can edit/delete an existing reservation request so that I can make changes online if my plans change.
 11. As a user, I want to be able to select the number of people in my party when booking so that I know there will be an available room at the table for all my party’s members.
 12. As a user, I want to be able to make a reservation request for a table for a specific date/time so that I will know if I have a table when I arrive.
-13. As a user, I want to receive an email confirming my reservation so that I know my reservation is confirmed.
-15. As a user, I can browse the restaurants' menu so I can decide what to order.
+13. As a user, I want to receive see a notification confirming my reservation has been submitted so that I know my reservation has been submitted. 
+14. As a user, I can browse the restaurants' menu so I can decide what to order.
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294209/Coolers_Palette_nw9nhn.jpg)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294312/Navy_Blue_Pink_Text_Logo_wqowsz.jpg)
@@ -74,6 +74,8 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
     
 [Wireframes](Wireframes.md)
 ## Wireframes
+
+
 
 [Testing](testing.md)
 ## Wireframes
