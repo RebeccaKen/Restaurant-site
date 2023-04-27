@@ -74,8 +74,35 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682384869/footer.png_jvabvp.png)
 
 
+## Scope
+
+In order to achieve the desired user & business goals, the following features will be included in this release:
+
+- Responsive navbar that will navigate to the various pages throughout the site
+- Landing page with brief information about the restaurant.
+- Menus page with descriptions, pricing and alergens listed.
+- Reservations page, with a booking form that sends to the restaurant admin. 
+- Manage reservations page, where logged-in users can edit/delete existing reservations they have.
+- Update details page, for logged in users to update their details which in turn updates the customer model.
+- Register/login feature using Django allauth
 
 
+## Databases 
+
+The Menus, Reservations and feedback apps require databases to store information so I have built 5 custom models.
+
+### Menus
+
+Menu & MenuItem are the model names for the menus app, these are two standalone models that provide all of the information required to display the items as part of the restaurant's menu. Each item has a name, description, price & allergens.
+
+### Reservation
+
+There are 2 models in this app, Customer & Reservation. The combination of these models allow for customer details to be stored, reservation enquiries to be made & managed.For each reservation, there will be a customer assigned to it. The customer is assigned during the enquiry process. This works for users that are logged in. 
+
+
+### Feedback
+
+The Feedback model allows customer, who and both logged in and not logged in, to send feedback to the admin where it is stored in a database. Each Feedback form requires a customers name or it cannot be submitted. A feedback form has a name, email, comments section and a rating dropdown menu. 
     
 [Wireframes](Wireframes.md)
 ## Wireframes
@@ -83,7 +110,55 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 
 
 [Testing](testing.md)
-## Wireframes
+## Testing
+
+
+## Deployment
+
+
+The master branch of this repository has been used for the deployed version of this application.
+Using Github & Gitpod
+
+To deploy my Django application, I had to use the Code Institute Python Essentials Template.
+
+- Click the Use This Template button.
+- Add a repository name and brief description.
+- Click the Create Repository from Template to create your repository.
+- To create a Gitpod workspace you then need to click Gitpod, this can take a few minutes.
+- When you want to work on the project it is best to open the workspace from Gitpod (rather than Github) as this will open your previous workspace rather than creating a new one.       
+- Committing your work should be done often and should have clear/explanatory messages, use the following commands to make your commits:
+    -git add .: adds all modified files to a staging area
+    -git commit -m "A message explaining your commit": commits all changes to a local repository.
+    git push: pushes all your committed changes to your Github repository.
+
+### Creating an Application with Heroku
+
+I followed the below steps using the Code Institute tutorial and Django Blog cheatsheat
+
+- The following command in the Gitpod CLI will create the relevant files needed for Heroku to install your project dependencies pip3 freeze --local > requirements.txt. Please note this file should be added to a .gitignore file to prevent the file from being committed. A Procfile is also required that specifies the commands that are executed by the app on startup.
+
+- Go to Heroku.com and log in; if you do not already have an account then you will need to create one.
+- Click the New dropdown and select Create New App.
+- Enter a name for your new project, all Heroku apps need to have a unique name, you will be prompted if you need to change it.
+- Select the region you are working in.
+
+### Heroku Settings You will need to set your Environment Variables - this is a key step to ensuring your application is deployed properly.
+
+- In the Settings tab, click on Reveal Config Vars and set the following variables:
+        SECRET_KEY - to be set to your chosen key
+        CLOUDINARY_URL - to be set to your Cloudinary API environment variable
+- In the resources tab you must install 'Heroku Postgres'
+
+### Heroku Deployment In the Deploy tab:
+
+-Connect your Heroku account to your Github Repository following these steps:
+        Click on the Deploy tab and choose Github-Connect to Github.
+        Enter the GitHub repository name and click on Search.
+        Choose the correct repository for your application and click on Connect.
+    
+- You can then choose to deploy the project manually or automatically, automatic deployment will generate a new application every time you push a change to Github, whereas manual deployment requires you to push the Deploy Branch button whenever you want a change made.
+- Once you have chosen your deployment method and have clicked Deploy Branch your application will be built and you should see the below View button, click this to open your application.
+
 
 
 ### Technology Used 
