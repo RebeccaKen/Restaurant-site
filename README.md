@@ -50,7 +50,12 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 
 ## Features
 
+The colour palette I chose for this website is fun, electric and reflects the energetic atmosphere at Mr. D'z Route 66 Diner. Iwanted the user to get the impression from the website that Mr.D'z Route 66Diner was a lively establishment, so I choose a colour palette that bothcompliments and clashes in equal turns. The pastel pink as a background colour worksnicely to give the website a fresh colour wash without over-powering any of theimages, fonts or features on the website. I choose a bright red for the submit buttons to clash with that pastel pink without sacrificing the buttons' visibility. 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294209/Coolers_Palette_nw9nhn.jpg)
+
+I created a logo for 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294312/Navy_Blue_Pink_Text_Logo_wqowsz.jpg)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302579/Artistic_Textured_Ink_Brush_Stroke_Brand_Logo_bkneln.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302767/Screenshot_2023-04-24_at_03-18-58_Mr._D_z_Route_66_Diner_ivic6h.png)
@@ -104,13 +109,17 @@ There are 2 models in this app, Customer & Reservation. The combination of these
 
 The Feedback model allows customer, who and both logged in and not logged in, to send feedback to the admin where it is stored in a database. Each Feedback form requires a customers name or it cannot be submitted. A feedback form has a name, email, comments section and a rating dropdown menu. 
     
-[Wireframes](Wireframes.md)
+## Skeleton mock-ups
+
 ## Wireframes
 
+Please note the actual website differs slightly from the original wireframes.
 
+[Wireframes](Wireframes.md)
 
-[Testing](testing.md)
 ## Testing
+[Testing](testing.md)
+
 
 
 ## Deployment
