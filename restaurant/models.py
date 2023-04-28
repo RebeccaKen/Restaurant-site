@@ -45,23 +45,41 @@ class Menu(models.Model):
         """
         return reverse('menu_detail', args=[str(self.id)])
 
-
-# model for MenuItems
-
-
 class MenuItem(models.Model):
+    """
+    A model representing a single item on a menu.
+
+    Attributes:
+        name (str): The name of the menu item.
+        slug (str): A unique slugified version of the menu item name.
+        description (str, optional): A brief description of the menu item (default '').
+        allergens (str, optional): A list of allergens contained in the menu item (default '').
+        price (decimal): The price of the menu item.
+        menu (Menu): The menu that this item belongs to.
+        updated_on (datetime): The date and time when the menu item was last updated.
+        created_on (datetime): The date and time when the menu item was created.
+
+    Methods:
+        __str__(): Returns a string representation of the menu item.
+    """
+
     name = models.CharField(max_length=200, unique=True)
     slug = AutoSlugField(populate_from='name', unique=True)
     description = models.TextField(blank=True, max_length=500)
     allergens = models.TextField(blank=True, max_length=500)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    menu = models.ForeignKey(
-        Menu, related_name='menu', on_delete=models.CASCADE)
+    menu = models.ForeignKey(Menu, related_name='menu', on_delete=models.CASCADE)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        """
+        Returns a string representation of the menu item.
+
+        Returns:
+            str: The name of the menu item.
+        """
+    return self.name
 
 
 # model for reservations
