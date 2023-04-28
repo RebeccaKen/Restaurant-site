@@ -139,9 +139,12 @@ class Reservation(models.Model):
         Returns:
             str: A string in the format "Reservation for {name} on
             {reservation_date} at {reservation_time}".
-        """
-    return f"Reservation for {self.name} on {self.reservation_date} at"
-    "{self.reservation_time}"
+       """
+
+    return (
+        f"Reservation for {self.name} on "
+        f"{self.reservation_date} at {self.reservation_time}"
+    )
 
     def get_absolute_url(self):
         """
@@ -150,7 +153,7 @@ class Reservation(models.Model):
         Returns:
             str: The URL for the edit view of the reservation.
         """
-    return reverse('reservation_edit', args=[str(self.pk)])
+        return reverse('reservation_edit', args=[str(self.pk)])
 
 
 class Feedback(models.Model):
