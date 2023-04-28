@@ -26,7 +26,6 @@ class Menu(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True)
 
-
     def __str__(self):
         return self.name
         """
@@ -43,7 +42,7 @@ class Menu(models.Model):
         Returns:
             str: The URL for the detail view of the menu item.
         """
-        return reverse('menu_detail', args=[str(self.id)])
+    return reverse('menu_detail', args=[str(self.id)])
 
 class MenuItem(models.Model):
     """
@@ -86,8 +85,32 @@ class MenuItem(models.Model):
 
 
 class Reservation(models.Model):
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=True)
+    """
+    The Reservation model represents a reservation made by a user. 
+    It includes the user's information (if available), the reservation 
+    details such as name, number of guests, email, phone, date and time 
+    of reservation, notes, slug, creation date, and approval status.
+
+    Attributes:
+        user: ForeignKey to the User model. Represents the user who made the reservation.
+        name: CharField. The name for the reservation.
+        number_of_guests: IntegerField. The number of guests for the reservation.
+        email: EmailField. The email address for the reservation.
+        phone: CharField. The phone number for the reservation.
+        reservation_date: DateField. The date of the reservation.
+        reservation_time: TimeField. The time of the reservation.
+        notes: CharField. Additional notes for the reservation.
+        slug: AutoSlugField. A slug to represent the reservation, generated from the name field.
+        created_at: DateTimeField. The date and time when the reservation was created.
+        is_approved: BooleanField. Indicates whether the reservation has been approved.
+    
+    Methods:
+
+        str(self): Returns a string representation of the reservation.
+        get_absolute_url(self): Returns the URL for editing the reservation.
+    """
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200, null=False, blank=False)
     number_of_guests = models.IntegerField(blank=False, default=1)
     email = models.EmailField(null=False)
@@ -100,10 +123,22 @@ class Reservation(models.Model):
     is_approved = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"Reservation for {self.name} on {self.reservation_date} at {self.reservation_time}"
+          """
+        Returns a string representation of the reservation.
+
+        Returns:
+            str: A string in the format "Reservation for {name} on {reservation_date} at {reservation_time}".
+        """
+    return f"Reservation for {self.name} on {self.reservation_date} at {self.reservation_time}"
 
     def get_absolute_url(self):
-        return reverse('reservation_edit', args=[str(self.pk)])
+        """
+        Returns the URL for accessing the edit view of the reservation.
+
+        Returns:
+            str: The URL for the edit view of the reservation.
+        """
+    return reverse('reservation_edit', args=[str(self.pk)])
 
 
 # model for feedback
