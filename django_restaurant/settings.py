@@ -15,7 +15,7 @@ import dj_database_url
 from django.contrib.messages import constants as messages
 
 if os.path.isfile("env.py"):
-    import env 
+    import env
 
 import mimetypes
 mimetypes.add_type("text/css", ".css", True)
