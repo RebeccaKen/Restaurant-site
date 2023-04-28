@@ -10,18 +10,39 @@ from datetime import datetime
 from datetime import date, time
 
 
-
-# model for Menu
-
-
 class Menu(models.Model):
+    """
+    A model representing a menu item.
+
+    Attributes:
+        name (str): The name of the menu item.
+        description (str, optional): A brief description of the menu item (default '').
+
+    Methods:
+        __str__(): Returns a string representation of the menu item.
+        get_absolute_url(): Returns the URL for accessing the detail view of the menu item.
+    """
+
     name = models.CharField(max_length=200)
     description = models.TextField(blank=True)
 
+
     def __str__(self):
         return self.name
+        """
+        Returns a string representation of the menu item.
+
+        Returns:
+            str: The name of the menu item.
+        """
 
     def get_absolute_url(self):
+        """
+        Returns the URL for accessing the detail view of the menu item.
+
+        Returns:
+            str: The URL for the detail view of the menu item.
+        """
         return reverse('menu_detail', args=[str(self.id)])
 
 
