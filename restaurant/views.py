@@ -13,10 +13,12 @@ from allauth.account.forms import UserForm
 from django.views.generic.edit import FormView
 from .models import Menu, MenuItem
 
-#Views for restaurant website
+# Views for restaurant website
+
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
+
 
 class MenuListView(ListView):
     model = Menu
@@ -47,12 +49,13 @@ class ReservationDetailView(LoginRequiredMixin, DetailView):
 class ReservationCreateView(LoginRequiredMixin, CreateView):
     model = Reservation
     template_name = 'reservation_create.html'
-    fields = ['name', 'email', 'phone', 'number_of_guests', 'reservation_time', 'reservation_date', 'notes',]
+    fields = ['name', 'email', 'phone', 'number_of_guests',
+              'reservation_time', 'reservation_date', 'notes']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
-    
+
     def __str__(self):
         return f'{self.user.username} - Reservation #{self.id}'
 
@@ -75,16 +78,23 @@ class ReservationListView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['reservations'] = self.get_queryset()
         return context
-    
+
     def user_reservations(self):
-        reservations = Reservation.objects.filter(user__email=self.request.user.email)
-        return render(self.request, 'reservation_user.html', {'reservations': reservations})
+        reservations = Reservation.objects.filter(
+            user__email=self.request.user.email
+        )
+        return render(
+            self.request,
+            'reservation_user.html',
+            {'reservations': reservations}
+        )
 
 
 class ReservationEditView(LoginRequiredMixin, UpdateView):
     model = Reservation
     template_name = 'reservation_edit.html'
-    fields = ['name', 'number_of_guests', 'email', 'phone', 'reservation_time', 'reservation_date', 'notes', 'is_approved']
+    fields = ['name', 'number_of_guests', 'email', 'phone',
+              'reservation_time', 'reservation_date', 'notes', 'is_approved']
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -112,6 +122,7 @@ class ReservationDeleteView(LoginRequiredMixin, DeleteView):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
 
+
 class FeedbackListView(ListView):
     model = Feedback
     template_name = 'feedback.html'
@@ -135,4 +146,3 @@ class FeedbackListView(ListView):
         context['form'] = FeedbackForm()
         context['submitted'] = getattr(self, 'submitted', False)
         return context
-
