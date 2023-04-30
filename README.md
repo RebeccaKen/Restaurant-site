@@ -47,6 +47,46 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 13. As a user, I want to receive see a notification confirming my reservation has been submitted so that I know my reservation has been submitted. 
 14. As a user, I can browse the restaurants' menu so I can decide what to order.
 
+## Scope
+
+In order to achieve the desired user & business goals, the following features will be included in this release:
+
+- Responsive navbar that will navigate to the various pages throughout the site
+- Landing page with brief information about the restaurant.
+- Menus page with descriptions, pricing and alergens listed.
+- Reservations page, with a booking form that sends to the restaurant admin. 
+- Manage reservations page, where logged-in users can edit/delete existing reservations they have.
+- Update details page, for logged in users to update their details which in turn updates the customer model.
+- Register/login feature using Django allauth
+
+
+## Databases 
+
+The Menus, Reservations and feedback apps require databases to store information so I have built 5 custom models.
+
+### Menus
+
+Menu & MenuItem are the model names for the menus app, these are two standalone models that provide all of the information required to display the items as part of the restaurant's menu. Each item has a name, description, price & allergens.
+
+### Reservation
+
+There are 2 models in this app, Customer & Reservation. The combination of these models allow for customer details to be stored, reservation enquiries to be made & managed.For each reservation, there will be a customer assigned to it. The customer is assigned during the enquiry process. This works for users that are logged in. 
+
+
+### Feedback
+
+The Feedback model allows customer, who and both logged in and not logged in, to send feedback to the admin where it is stored in a database. Each Feedback form requires a customers name or it cannot be submitted. A feedback form has a name, email, comments section and a rating dropdown menu. 
+    
+## Skeleton mock-ups
+
+## Wireframes
+
+Please note the actual website differs slightly from the original wireframes.
+
+[Wireframes](Wireframes.md)
+
+## Testing
+[Testing](testing.md)
 
 ### Colour palette 
 
@@ -133,58 +173,30 @@ Once they have signed in, the user gains access to a reservatioon form that allo
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302829/Reservation-_create_krlmsc.png)
 
+### Reservation list 
+
+When the user has submitted their reservtaion form, they are taken to the 'My Reservations' page. This page allows the user to view all their current reservations. This page can also be accessed by a logged-in user when they access the 'My Reservations' heading in the navigation bar. The reservations on the 'My Reservations' page has two violet buttons: 'Edit' & 'Delete'. When the user's mouse hovers over the buttons, they turn red. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302833/Reservation-list_t6ng0y.png)
+
+### Reservation Edit 
+
+When the user clicks into the 'Edit' button on the 'My Reservation' page, they are presented with their current reservation in a form. There, the user can edit their reservation and submit the changes. Once the edited reservation has been submitted, the user is brought back to the homepage. A green message appears at the top of the page stating 'Your reservation has been edited!' so the user understands their edited reservation is submitted. 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302831/Reservation-edit_lc2hhw.png)
+
+### Reservation Delete 
+
+When a user clicks on the 'Delete' button, they are presented with a question 'Are you sure you want to delete this reservation?' and two buttons, 'Delete' and 'Confirm'. If the user clicks 'Cancel' they will be brought back to the 'My Reservations' page where they will be able to see their reservation is not deleted. If they click 'Delete' they will be taken to the 'My Reservations' page where they can see that their reservation has been removed from the page. 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302830/Reservation-delete_vvlkrz.png)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302833/Reservation-list_t6ng0y.png)
+
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302837/Sign-out_mnszdy.png)
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682303793/sign-up_otztff.png)
-
-
-
-## Scope
-
-In order to achieve the desired user & business goals, the following features will be included in this release:
-
-- Responsive navbar that will navigate to the various pages throughout the site
-- Landing page with brief information about the restaurant.
-- Menus page with descriptions, pricing and alergens listed.
-- Reservations page, with a booking form that sends to the restaurant admin. 
-- Manage reservations page, where logged-in users can edit/delete existing reservations they have.
-- Update details page, for logged in users to update their details which in turn updates the customer model.
-- Register/login feature using Django allauth
-
-
-## Databases 
-
-The Menus, Reservations and feedback apps require databases to store information so I have built 5 custom models.
-
-### Menus
-
-Menu & MenuItem are the model names for the menus app, these are two standalone models that provide all of the information required to display the items as part of the restaurant's menu. Each item has a name, description, price & allergens.
-
-### Reservation
-
-There are 2 models in this app, Customer & Reservation. The combination of these models allow for customer details to be stored, reservation enquiries to be made & managed.For each reservation, there will be a customer assigned to it. The customer is assigned during the enquiry process. This works for users that are logged in. 
-
-
-### Feedback
-
-The Feedback model allows customer, who and both logged in and not logged in, to send feedback to the admin where it is stored in a database. Each Feedback form requires a customers name or it cannot be submitted. A feedback form has a name, email, comments section and a rating dropdown menu. 
-    
-## Skeleton mock-ups
-
-## Wireframes
-
-Please note the actual website differs slightly from the original wireframes.
-
-[Wireframes](Wireframes.md)
-
-## Testing
-[Testing](testing.md)
-
 
 
 ## Deployment
