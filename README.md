@@ -48,24 +48,74 @@ Given that ‘Mr D’z Route 66 Diner’ is located along route 66, the vast maj
 14. As a user, I can browse the restaurants' menu so I can decide what to order.
 
 
-## Features
+### Colour palette 
 
-The colour palette I chose for this website is fun, electric and reflects the energetic atmosphere at Mr. D'z Route 66 Diner. Iwanted the user to get the impression from the website that Mr.D'z Route 66Diner was a lively establishment, so I choose a colour palette that bothcompliments and clashes in equal turns. The pastel pink as a background colour worksnicely to give the website a fresh colour wash without over-powering any of theimages, fonts or features on the website. I choose a bright red for the submit buttons to clash with that pastel pink without sacrificing the buttons' visibility. 
+The colour palette I chose for this website is fun, electric and reflects the energetic atmosphere at Mr. D'z Route 66 Diner. I wanted the user to get the impression from the website that Mr.D'z Route 66 Diner was a lively establishment, so I choose a colour palette that both compliments and clashes in equal turns. The pastel pink as a background colour works nicely to give the website a fresh colour wash without over-powering any of the images, fonts or features on the website. I choose a bright red for the submit buttons to clash with that pastel pink without sacrificing the buttons' visibility. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294209/Coolers_Palette_nw9nhn.jpg)
 
-I created a logo for 
+### Logo
+
+I created a logo to enhance the branding of the diner. I created the logo using Canva. I have added a navy blue background to the image of the logo below so the first line ('Mr.D'z') would be visiable. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682294312/Navy_Blue_Pink_Text_Logo_wqowsz.jpg)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302579/Artistic_Textured_Ink_Brush_Stroke_Brand_Logo_bkneln.png)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302767/Screenshot_2023-04-24_at_03-18-58_Mr._D_z_Route_66_Diner_ivic6h.png)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302814/Dropdown_menu_zo0mp0.png)
+
+I added the logo to the main image of the homepage, so that it would be clear to the user without over-powering the main image. 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302985/Screenshot_2023-04-24_at_03-22-26_Mr._D_z_Route_66_Diner_xoekj5.png)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302823/Main-with-logo_wwo02c.png)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682384582/About-us_section_x7i6mm.png)
+
+## Features
+
+### Home Icon
+
+I wanted to create a small icon that would act as a clickable button that would bring the user back to the 'Home' page of the site. I used Canva to create the icon. I choose to use an illustration of a hamburger as the hamburger is an iconic food often associated with diner, it also acts as a nod to the nav bar, which collapses on mobile screens to a hamburger icon. 
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302579/Artistic_Textured_Ink_Brush_Stroke_Brand_Logo_bkneln.png)
+
+### Navigation Bar
+
+The navigation bar has links to all the active pages for the user and are clearly labelled. If the user is logged in then the right side of the menu shows links for pages that only authorised users can visit & use, they are: 'My Reservations' & 'Logout'. Otherwise, the user will be given the option to 'Register' or 'Login'. This change in the navigation bar ensures users are directed to pages they can use and also prompting the user to sign up for an account. Furthermore, it makes it clear what the logged-in status is to the user.
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302767/Screenshot_2023-04-24_at_03-18-58_Mr._D_z_Route_66_Diner_ivic6h.png)
+
+The navigation bar is fully responsive and collapses on mobile screens to a hamburger icon, this easily allows the user to continue to use the navigation links without the need to press back on the browser.
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302814/Dropdown_menu_zo0mp0.png)
+
+### Main image
+
+This main image of the website is an exterior image of Mr.D'z Route 66 Diner with the logo embedded in it. The main image is featured on the homepage of the website so the user can see the exterior of the restaurant straight away when they visit the site. This will allow the user to know what the restaurant looks like, which would be of benefit as the customer base are travelling down Route 66 and will need to know what the restaurant looks like in order to find it. 
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302823/Main-with-logo_wwo02c.png)
+
+### About Us 
+
+The about us section of the homepage gives the website user a brief history of Mr.D'z Route 66 Diner, a summary of the Restaurant ethos and corresponding image. This section in fully responsive and when viewed on mobile screen, the about us section will stack on top of the image. 
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682384582/About-us_section_x7i6mm.png)
+
+
+### Footer 
+
+The footer displays some of the restaurants key information and has links to social accounts. It is split into two sections, the opening times ('Open 24/7') and the social media icons beneath. 
+
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682384869/footer.png_jvabvp.png)
+
+
+### Contact Us 
+
+All users are able to submit a contact form from the 'Contact' page, this sends the form to the admin side of the site where the admin can view the feedback. Having a way to communicate with the website owner/restaurant manager is a helpful tool for the user and helps the rastaurant to learn from the customer's experience and improve their service accordingly.
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302816/Feedback_form_d4fube.png)
+
+When the user submits a feedback form, a red 'thank you' message appears. This allows the user to know that their form has been submitted and their feedback is appreciated. 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302818/Feedback-thank-you_mldxal.png)
+
+### Menu 
+
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302825/Menu_ojvjab.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302829/Reservation-_create_krlmsc.png)
@@ -76,7 +126,7 @@ I created a logo for
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302837/Sign-out_mnszdy.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682303793/sign-up_otztff.png)
-![](https://res.cloudinary.com/djbdldshh/image/upload/v1682384869/footer.png_jvabvp.png)
+
 
 
 ## Scope

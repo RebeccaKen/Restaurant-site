@@ -52,6 +52,3 @@ class CustomerAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone', 'email', 'address')
     list_filter = ('name', 'phone')
     search_fields = ('name', 'phone')
-
-
-

@@ -141,10 +141,10 @@ class Reservation(models.Model):
             {reservation_date} at {reservation_time}".
        """
 
-    return (
+        return (
         f"Reservation for {self.name} on "
         f"{self.reservation_date} at {self.reservation_time}"
-    )
+        )
 
     def get_absolute_url(self):
         """
