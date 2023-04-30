@@ -115,10 +115,25 @@ When the user submits a feedback form, a red 'thank you' message appears. This a
 
 ### Menu 
 
+The menus page features all the restaurant's menus along with a image for each one. The menu items feature a title, description, price and a list of allergens. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302825/Menu_ojvjab.png)
+
+### Reservations 
+
+### Sign in 
+
+In order to make a reservation, the user is directed to sign-in to their account. 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
+
+### Reservation form 
+
+Once they have signed in, the user gains access to a reservatioon form that allows them to submit their name, email, phone number, reservation time, reservation date and the number of guests in their party. The user can also fill in the notes area to specify any special requests i.e. 'We will need a high-chair'. The name, phone number and email fields are also required fields, so a reservation cannot be submitted without them. 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302829/Reservation-_create_krlmsc.png)
+
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302833/Reservation-list_t6ng0y.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302831/Reservation-edit_lc2hhw.png)
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302830/Reservation-delete_vvlkrz.png)
