@@ -77,7 +77,6 @@ There are 2 models in this app, Customer & Reservation. The combination of these
 
 The Feedback model allows customer, who and both logged in and not logged in, to send feedback to the admin where it is stored in a database. Each Feedback form requires a customers name or it cannot be submitted. A feedback form has a name, email, comments section and a rating dropdown menu. 
     
-## Skeleton mock-ups
 
 ## Wireframes
 
@@ -206,7 +205,6 @@ The sign out page is located under the heading 'Logout'. When the user clicks th
 ### Register
 
 When an unauthorised user would like to sign up to have an account, and book reservations, they can click on the 'Register' page. The page presents three field that must be filled, they are: 'Name', 'Password' and 'Password (again)'. The 'Email' field is optional. Once a the user has signed up, a message will appear below the naviagtion bar on the homepage that states: 'Successfully signed in as *name*'. The navigation bar will also reflect their new status. The user will now see 'My Reservations' & 'Logout' in the right-hand size of the navigation bar. 
-
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682303793/sign-up_otztff.png)
 
 
@@ -280,4 +278,35 @@ I followed the below steps using the Code Institute tutorial and Django Blog che
 
 - Unsplash 
 - Am I Responsive?
+
+### Testing 
+
+I have used a combination of manual and automated testing to ensure the website's functionality meets the desired intent.
+
+### Code Validation
+
+All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
+
+
+* W3C CSS Validation Service
+Used to validate all CSS code written and used in this webpage.
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682975449/Screenshot_2023-05-01_at_17-30-00_W3C_CSS_Validator_results_for_TextArea_CSS_level_3_SVG_kzvyoj.png)
+
+
+* JSHint
+Used to validate JS code
+
+
+* CI PYTHON LINTER
+Used to validate Python code 
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682975447/Screenshot_2023-04-28_at_18-50-17_CI_Python_Linter_o42ahe.png)
+
+* SYNK 
+Used to test code security 
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682975445/Screenshot_2023-05-01_at_17-27-58_Python_Code_Checker_Powered_By_Snyk_Code_Snyk_u0ymn7.png)
+
+
 
