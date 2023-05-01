@@ -187,12 +187,19 @@ When the user clicks into the 'Edit' button on the 'My Reservation' page, they a
 
 ### Reservation Delete 
 
-When a user clicks on the 'Delete' button, they are presented with a question 'Are you sure you want to delete this reservation?' and two buttons, 'Delete' and 'Confirm'. If the user clicks 'Cancel' they will be brought back to the 'My Reservations' page where they will be able to see their reservation is not deleted. If they click 'Delete' they will be taken to the 'My Reservations' page where they can see that their reservation has been removed from the page. 
+When a user clicks on the 'Delete' button, they are presented with a question 'Are you sure you want to delete this reservation?' and two buttons, 'Delete' & 'Confirm'. If the user clicks 'Cancel' they will be brought back to the 'My Reservations' page where they will be able to see their reservation is not deleted. If they click 'Delete' they will be taken to the 'My Reservations' page where they can see that their reservation has been removed from the page. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302830/Reservation-delete_vvlkrz.png)
 
+### Login 
+
+The sign in page is located under the heading 'Login'. This page allows the user to sign in to their account by filling in the 'Username' & 'Password' fields. There is also a 'Remember me' button so the user can save their 'Username' & 'Password' for their convenience. When the user have logged in, a message appears under the navigation bar that states: 'Successfully signed in as *name*'. When the user is logged in, the right side of the menu shows links for pages that only authorised users can visit & use, they are: 'My Reservations' & 'Logout'. Both the message and the changes in the navigation page give the user a clear indication of their login status. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
+
+### Sign Out 
+
+The sign out page is located under the heading 'Logout'. When the user clicks the 'Logout' heading, they are taken to a page that states: 'Are you sure you want to sign out?' When the user clicks 'Sign out' they are taken back to the homepage, where the user will see a message appear beneath the navigation bar that states: 'You are now signed out'. The navigation bar will also revert to it's original, non-signed in state. The right side of the menu shows links for pages that unauthorised users can visit & use, they are: 'Reservations', 'Register' and 'Login'. Both the message and the changes in the navigation page give the user a clear indication of their login status. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302837/Sign-out_mnszdy.png)
 
