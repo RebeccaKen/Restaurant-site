@@ -288,25 +288,23 @@ I have used a combination of manual and automated testing to ensure the website'
 All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
 
 
-* W3C CSS Validation Service
-Used to validate all CSS code written and used in this webpage.
+* W3C CSS Validation Service - Used to validate all CSS code written and used in this webpage.
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682975449/Screenshot_2023-05-01_at_17-30-00_W3C_CSS_Validator_results_for_TextArea_CSS_level_3_SVG_kzvyoj.png)
 
 
-* JSHint
-Used to validate JS code
+* JSHint - Used to validate JS code
 
 
-* CI PYTHON LINTER
-Used to validate Python code 
+* CI PYTHON LINTER - Used to validate Python code 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682975447/Screenshot_2023-04-28_at_18-50-17_CI_Python_Linter_o42ahe.png)
 
-* SYNK 
-Used to test code security 
+* SYNK - Used to test code security 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682975445/Screenshot_2023-05-01_at_17-27-58_Python_Code_Checker_Powered_By_Snyk_Code_Snyk_u0ymn7.png)
 
+* WAVE - Used to test the accessibility of the website.
 
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682977938/Screenshot_2023-05-01_at_22-51-56_WAVE_Report_of_Mr._D_z_Route_66_Diner_od347d.png)
 
