@@ -2,7 +2,7 @@
 
 ![Image of deployed website](https://res.cloudinary.com/djbdldshh/image/upload/v1682384287/Am_I_Responsive_lkiian.png)
 
-
+[Link to live website](https://restaurant-site-app.herokuapp.com/)
 
 This is a full stack project created with Django, Python, Bootstrap, JavaScript, Html and CSS. This website was constructed to act as a website for the fictional Diner style restaurant ‘Mr D’z Route 66 Diner’. This website allows guests to make reservations & view the menu online.  
 
@@ -197,11 +197,15 @@ The sign in page is located under the heading 'Login'. This page allows the user
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
 
-### Sign Out 
+### Logout 
 
 The sign out page is located under the heading 'Logout'. When the user clicks the 'Logout' heading, they are taken to a page that states: 'Are you sure you want to sign out?' When the user clicks 'Sign out' they are taken back to the homepage, where the user will see a message appear beneath the navigation bar that states: 'You are now signed out'. The navigation bar will also revert to it's original, non-signed in state. The right side of the menu shows links for pages that unauthorised users can visit & use, they are: 'Reservations', 'Register' and 'Login'. Both the message and the changes in the navigation page give the user a clear indication of their login status. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302837/Sign-out_mnszdy.png)
+
+### Register
+
+When an unauthorised user would like to sign up to have an account, and book reservations, they can click on the 'Register' page. The page presents three field that must be filled, they are: 'Name', 'Password' and 'Password (again)'. The 'Email' field is optional. Once a the user has signed up, a message will appear below the naviagtion bar on the homepage that states: 'Successfully signed in as *name*'. The navigation bar will also reflect their new status. The user will now see 'My Reservations' & 'Logout' in the right-hand size of the navigation bar. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682303793/sign-up_otztff.png)
 
