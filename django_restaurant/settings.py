@@ -32,7 +32,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEBUG' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['restaurant-site-app.herokuapp.com', 'localhost']
 
