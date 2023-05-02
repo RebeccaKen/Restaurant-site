@@ -111,7 +111,7 @@ I wanted to create a small icon that would act as a clickable button that would 
 
 ### Navigation Bar
 
-The navigation bar has links to all the active pages for the user and are clearly labelled. If the user is logged in then the right side of the menu shows links for pages that only authorised users can visit & use, they are: 'My Reservations' & 'Logout'. Otherwise, the user will be given the option to 'Register' or 'Login'. This change in the navigation bar ensures users are directed to pages they can use and also prompting the user to sign up for an account. Furthermore, it makes it clear what the logged-in status is to the user.
+The navigation bar has links to all the active pages for the user and are clearly labelled. If the user is logged in then the right side of the menu shows links for pages that only authorised users can visit & use, they are: 'My Reservations' & 'Logout'. Otherwise, the user will be given the option to 'Register' or 'Login'. This change in the navigation bar ensures users are directed to pages they can use and also prompts the user to sign up for an account. Furthermore, it makes it clear what the logged-in status is to the user.
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302767/Screenshot_2023-04-24_at_03-18-58_Mr._D_z_Route_66_Diner_ivic6h.png)
 
@@ -150,7 +150,7 @@ When the user submits a feedback form, a red 'thank you' message appears. This a
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302818/Feedback-thank-you_mldxal.png)
 
-### Menu 
+### Menu
 
 The menus page features all the restaurant's menus along with a image for each one. The menu items feature a title, description, price and a list of allergens. 
 
@@ -190,7 +190,7 @@ When a user clicks on the 'Delete' button, they are presented with a question 'A
 
 ### Login 
 
-The sign in page is located under the heading 'Login'. This page allows the user to sign in to their account by filling in the 'Username' & 'Password' fields. There is also a 'Remember me' button so the user can save their 'Username' & 'Password' for their convenience. When the user have logged in, a message appears under the navigation bar that states: 'Successfully signed in as *name*'. When the user is logged in, the right side of the menu shows links for pages that only authorised users can visit & use, they are: 'My Reservations' & 'Logout'. Both the message and the changes in the navigation page give the user a clear indication of their login status. 
+The sign in page is located under the heading 'Login'. This page allows the user to sign in to their account by filling in the 'Username' & 'Password' fields. There is also a 'Remember me' button so the user can save their 'Username' & 'Password' for their convenience. When the user have logged in, a message appears under the navigation bar that states: 'Successfully signed in as *name*', and the right side of the menu shows links for pages that only authorised users can visit & use, they are: 'My Reservations' & 'Logout'. Both the message and the changes in the navigation page give the user a clear indication of their login status. 
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302835/Reservation-sign-in_uxrpr5.png)
 
@@ -203,6 +203,7 @@ The sign out page is located under the heading 'Logout'. When the user clicks th
 ### Register
 
 When an unauthorised user would like to sign up to have an account, and book reservations, they can click on the 'Register' page. The page presents three field that must be filled, they are: 'Name', 'Password' and 'Password (again)'. The 'Email' field is optional. Once a the user has signed up, a message will appear below the naviagtion bar on the homepage that states: 'Successfully signed in as *name*'. The navigation bar will also reflect their new status. The user will now see 'My Reservations' & 'Logout' in the right-hand size of the navigation bar. 
+
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682303793/sign-up_otztff.png)
 
 

@@ -75,3 +75,28 @@ When an unauthorised user would like to sign up to have an account, they can cli
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682303793/sign-up_otztff.png)
 
 ![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302837/Sign-out_mnszdy.png)
+
+## Epic 4 - Menus can be viewed
+
+* [Menu can be viewed](https://github.com/RebeccaKen/Restaurant-site/issues/1): As a user, I can browse the restaurants' menu so I can decide what to order. 
+
+Any user, authenicated or not, can view the menus under the 'Menu' heading. The menus page features all the restaurant's menus along with a image for each one. The menu items feature a title, description, price and a list of allergens. 
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682302825/Menu_ojvjab.png)
+
+
+## Epic 5 - Superuser Access 
+
+* [Superuser can access backend](https://github.com/RebeccaKen/Restaurant-site/issues/15)
+
+* [Superuser can use all CRUD functionality on menu](https://github.com/RebeccaKen/Restaurant-site/issues/16)
+
+Using a specified login the site owner can access the admin backend
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1683046758/Screenshot_2023-05-02_at_17-56-16_Site_administration_Django_site_admin_d3knpb.png)
+
+Once in this admin backend, the superuser is able to access the menu items model, add new items or edit/delete existing one.
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1683046911/Screenshot_2023-05-02_at_18-00-07_Select_menu_item_to_change_Django_site_admin_mimdxm.png)
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1683046989/Screenshot_2023-05-02_at_18-02-27_Sausage_fries_Change_menu_item_Django_site_admin_wuj6zm.png)
