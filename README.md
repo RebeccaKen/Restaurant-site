@@ -84,8 +84,6 @@ Please note the actual website differs slightly from the original wireframes.
 
 [Wireframes](Wireframes.md)
 
-## Testing
-[Testing](testing.md)
 
 ### Colour palette 
 
@@ -255,8 +253,7 @@ I followed the below steps using the Code Institute tutorial and Django Blog che
 - Once you have chosen your deployment method and have clicked Deploy Branch your application will be built and you should see the below View button, click this to open your application.
 
 
-
-### Technology Used 
+## Technology Used 
 
 
 - Bootstrap
@@ -272,20 +269,42 @@ I followed the below steps using the Code Institute tutorial and Django Blog che
 - Heroku
 - PostgreSQL
 - Canva
+- Nu Html Checker
+- W3C CSS Validation Service
+- JSHint
+- CI PYTHON LINTER 
+- SYNK 
+- WAVE
+- Am I Responsive?
   
 
-### Credits 
+## Credits 
 
 - Unsplash 
-- Am I Responsive?
 
-### Testing 
+## Bugs 
+
+- Originally, I had created some CSS styling to add to the visual appeal of the 'menu' page. The styling targeted the order of the menu cards and images to create an odd and even effect; a row would have an image on the left and the menu card on the right, and the next line would reverse this order. The styling was successful, until an error occured. I must have opened my repository with Github, rather than Gitpod. After that error, the styling no longer would apply to the menu list and I have not been able to reinstate it. 
+
+- I would have liked to have my footer icons a darker colour to match the font colour of the navigation bar. However, I was unable to find a way of correctly applying these styles. 
+
+
+## Testing 
 
 I have used a combination of manual and automated testing to ensure the website's functionality meets the desired intent.
 
-### Code Validation
+
+### Testing
+[Testing](testing.md)
+
+
+## Code Validation
 
 All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
+
+* Nu Html Checker - Used to validate all HTML code written and used in this website. 
+
+![](https://res.cloudinary.com/djbdldshh/image/upload/v1682988458/Screenshot_2023-05-02_at_01-46-12_Showing_results_for_contents_of_text-input_area_-_Nu_Html_Checker_urbgig.png)
 
 
 * W3C CSS Validation Service - Used to validate all CSS code written and used in this webpage.
